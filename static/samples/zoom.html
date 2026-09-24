@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../css/components/zoom.css">
+	</head>
+  <body>
+		<div class="zoom-container">
+			<video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
+				<!-- :( https://github.com/microsoft/vscode/issues/289795#event-24538628765 -->
+				<source src = "./assets/video.mp4" type="video/mp4"/> 
+			</video>
+
+			<div role="tooltip" class = "zoom-tooltip-container">
+				<video id = "zoom_tooltip" class="zoom-tooltip" muted loop playsinline>
+				<source src = "./assets/video.mp4" type="video/mp4"/>
+				</video>
+			</div>
+    </div>
+  </body>
+
+	<script src="../js/components/zoom.js"></script>
+</html>

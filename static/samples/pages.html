@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="../css/components/pages.css">
+	</head>
+  <body >
+		<div class="page-container" style = "width: 500px;">
+			<div class="page-labels">
+				<input class = "page-radio" type="radio" id = "Tanks And Temples" name = "dataset" value = "Tanks And Temples">
+				<label class = "page-label" for="Tanks And Temples">Tanks And Temples</label>
+				<input class = "page-radio" type="radio" id = "ETH3D" name = "dataset" value = "ETH3D" checked>
+				<label class = "page-label" for="ETH3D">ETH3D</label>
+				<input class = "page-radio" type="radio" id = "nuScenes" name = "dataset" value = "nuScenes">
+				<label class = "page-label" for="nuScenes">nuScenes</label>
+			</div>
+
+			<div class="page-content">
+				<div class="page" ref = "Tanks And Temples">
+					Bonjour
+					<img src="assets/img.png" width = 500>
+				</div>
+
+				<div class="page" ref = "ETH3D">
+					Bonjour2
+					<img src="assets/img.png" width = 200 style = "display: block;">
+				</div>
+
+				<div class="page" ref = "nuScenes">
+					Bonjour3
+					<img src="assets/img.png" width = 400>
+					<div class="page-container" style = "width: 500px;">
+						<div class="page-labels">
+							<input class = "page-radio" type="radio" id = "img0" name = "images" value = "img0" checked>
+							<label class = "page-label" for="img0">img0</label>
+							<input class = "page-radio" type="radio" id = "img1" name = "images" value = "img1">
+							<label class = "page-label" for="img1">img1</label>
+						</div>
+						<div class="page-content">
+							<div class="page" ref = "img0">
+								Bonjour
+								<img src="assets/img.png" width = 500>
+							</div>
+
+							<div class="page" ref = "img1">
+								Bonjour2
+								<img src="assets/img.png" width = 200 style = "display: block;">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+    </div>
+  </body>
+
+	<script src="../js/components/pages.js"></script>
+</html>

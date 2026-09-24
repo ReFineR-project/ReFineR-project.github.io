@@ -1,0 +1,94 @@
+.page-radio{
+    display: None;
+}
+
+.page-labels{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 5px;
+}
+
+.page-label{
+    width: fit-content;
+    display: block;
+    border-radius: 10px;
+    padding: 0.5em;
+    border-width: 0;
+    transition: background-color 0.2s;
+    cursor: pointer;
+
+}
+
+.page-label > img{
+    display: block;
+    width: 100px;
+    border-radius: 10px;
+}
+.page-label:hover{
+    background-color: rgba(225, 225, 225);
+
+}
+.page-radio:checked + .page-label {
+    background-color: rgb(225, 225, 225);
+}
+
+.page-content{
+    margin: auto;
+    
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px 10px 10px 10px;
+    /* background-color: rgb(225, 225, 225); */
+    text-align: center;
+
+    /* align-content: center; */
+    justify-content: center;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    width: 100%;
+    height: fit-content;
+    overflow: clip;
+    border-radius: 10px;
+}
+
+.page{
+    grid-column: 1;
+    grid-row: 1;
+
+    width: 100%;
+    height: fit-content;
+
+    /* align-self: center; */
+    overflow: clip;
+
+    justify-self: center;
+
+    opacity: 0%;
+    visibility: hidden;
+    display: none;
+
+    transition: 
+        opacity .5s ,
+        visibility .5s;
+}
+
+.page[selected = true]{
+    opacity: 100%;
+    visibility: visible;
+    display: block;
+}
+
+@starting-style {
+    .page[selected = true] {
+        opacity: 0%;
+        visibility: hidden;
+        display: block ;
+    }
+}

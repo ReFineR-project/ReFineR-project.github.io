@@ -1,0 +1,51 @@
+.zoom-video{
+    anchor-name: --video-anchor;
+    border-radius: 10px;
+}
+
+.zoom-tooltip-container{
+    display: block;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    position: absolute;
+    position-anchor: --video-anchor;
+    bottom: anchor(top);
+    right: anchor(right);
+    margin-bottom: 5px;
+    box-shadow: 0 22px 60px rgba(2,6,23,.45), inset 0 1px 0 rgba(255,255,255,.14);
+    border-radius: 10px;
+
+    z-index: 10000;
+    position-try-fallbacks: flip-block;
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.zoom-tooltip{
+    max-width: none;
+}
+.zoom-container{
+    display: flex;
+    justify-content: center;
+    anchor-scope: --video-anchor;
+    cursor: crosshair
+}
+
+.zoom-tooltip-container[visible = true]{
+    visibility: visible;
+    opacity: 1;
+}
+
+/* https://nosmoking.developpez.com/demos/css/range-slider-custom.html */
+.zoom-range{
+    appearance: none;    
+    padding: 0;   
+    font: inherit;
+    color: #fff; 
+    opacity: .8;
+    background: #000000;
+    cursor: pointer;
+}

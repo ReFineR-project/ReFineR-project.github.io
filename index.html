@@ -26,8 +26,6 @@
         rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
@@ -37,13 +35,12 @@
   <link rel="stylesheet" href="./static/css/components/pages.css">
   <link rel="stylesheet" href="./static/css/components/day.css">
   <link rel="stylesheet" href="./static/css/components/caroussel.css">
+	<link rel="stylesheet" href="./static/css/components/arrows.css">
 
-  <link rel="icon" href="./static/images/logo_mines_paris.svg">
+  <link rel="icon" href="./static/images/logo_mines.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
 </head>
 <body data-theme>
@@ -193,32 +190,32 @@
 
       <div class="caroussel-container" caroussel-show-items = 3>
         <div class = "caroussel-left">
-            <span class="caroussel-left-arrow"></span>
+          <div class="arrow-left" data-size="15"></div>
         </div>
         <div class="caroussel-slider">
-          <div class="caroussel-items">
-            <div class="caroussel-item">
-              <img src="static/images/renders/tt_i_after.png", draggable="false">
-              <!-- <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
-                  <source src = "assets/video.mp4"/>
-              </video> -->
-            </div>
+            <div class="caroussel-items">
+                <div class="caroussel-item">
+                    <video autoplay controls muted loop playsinline>
+                        <source src = "static/samples/assets/video.mp4"/>
+                    </video>
+                </div>
 
-            <div class="caroussel-item">
-              <img src="static/images/renders/tt_i_after.png", draggable="false">
-            </div>
+                <div class="caroussel-item">
+                    <img src="static/samples/assets/img.png" style = "width: 45%; display: inline;">
+                    <img src="static/samples/assets/img.png" style = "width: 45%; display: inline;">
+                </div>
 
-            <div class="caroussel-item">
-              <img src="static/images/renders/tt_i_after.png", draggable="false">
-            </div>
+                <div class="caroussel-item">
+                    <img src="static/samples/assets/img.png">
+                </div>
 
-            <div class="caroussel-item">
-              <img src="static/images/renders/tt_i_after.png", draggable="false">
+                <div class="caroussel-item">
+                    <img src="static/samples/assets/img.png">
+                </div>
             </div>
-          </div>
         </div>
         <div class = "caroussel-right">
-          <span class="caroussel-right-arrow"></span>
+          <div class="arrow-right" data-size="15"></div>
         </div>
         <div class="caroussel-selects">
         </div>
@@ -294,17 +291,20 @@
                             RGB Image
                         </div>
                         <div class="compare-handle">
-                            <span class="compare-handle-right-arrow"></span>
-                            <span class="compare-handle-left-arrow"></span>
+                          <div class="arrow-left" data-size="10"></div>
+                          <div class="arrow-right" data-size="10"></div>
                         </div>
                       </div>
                     </div>
                     <div class="content">
+ 
                       <div class="zoom-container">
-                        <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
-                          <source src = "static/videos/tt_i_fused.mp4"/>
-                        </video>
-
+                        <div class="zoom-video-container">
+			                    <div class="zoom-cursor"></div>
+                          <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
+                            <source src = "static/videos/tt_i_fused.mp4"/>
+                          </video> 
+                        </div>
                         <div role="tooltip" class = "zoom-tooltip-container">
                           <video id = "zoom_tooltip" class="zoom-tooltip" muted loop playsinline>
                             <source src = "static/videos/tt_i_fused.mp4"/>
@@ -330,17 +330,19 @@
                             RGB Image
                         </div>
                         <div class="compare-handle">
-                            <span class="compare-handle-right-arrow"></span>
-                            <span class="compare-handle-left-arrow"></span>
+                          <div class="arrow-left" data-size="10"></div>
+                          <div class="arrow-right" data-size="10"></div>
                         </div>
                       </div>
                     </div>
                     <div class="content">
                       <div class="zoom-container">
-                        <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
-                          <source src = "static/videos/tt_i.mp4"/>
-                        </video>
-
+                        <div class="zoom-video-container">
+			                    <div class="zoom-cursor"></div>
+                          <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
+                            <source src = "static/videos/tt_i.mp4"/>
+                          </video>
+                        </div>
                         <div role="tooltip" class = "zoom-tooltip-container">
                           <video id = "zoom_tooltip" class="zoom-tooltip" muted loop playsinline>
                             <source src = "static/videos/tt_i.mp4"/>
@@ -370,17 +372,19 @@
                             RGB Image
                         </div>
                         <div class="compare-handle">
-                            <span class="compare-handle-right-arrow"></span>
-                            <span class="compare-handle-left-arrow"></span>
+                          <div class="arrow-left" data-size="10"></div>
+                          <div class="arrow-right" data-size="10"></div>
                         </div>
                       </div>
                     </div>
                     <div class="content">
                       <div class="zoom-container">
-                        <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
-                          <source src = "static/videos/tt_i_fused_2.mp4"/>
-                        </video>
-
+                        <div class="zoom-video-container">
+                          <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
+                            <source src = "static/videos/tt_i_fused_2.mp4"/>
+                          </video>
+			                    <div class="zoom-cursor"></div>
+                        </div>
                         <div role="tooltip" class = "zoom-tooltip-container">
                           <video id = "zoom_tooltip" class="zoom-tooltip" muted loop playsinline>
                             <source src = "static/videos/tt_i_fused_2.mp4"/>
@@ -406,16 +410,19 @@
                             RGB Image
                         </div>
                         <div class="compare-handle">
-                            <span class="compare-handle-right-arrow"></span>
-                            <span class="compare-handle-left-arrow"></span>
+                          <div class="arrow-left" data-size="10"></div>
+                          <div class="arrow-right" data-size="10"></div>
                         </div>
                       </div>
                     </div>
                     <div class="content">
                       <div class="zoom-container">
-                        <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
-                          <source src = "static/videos/tt_i_2.mp4"/>
-                        </video>
+                        <div class="zoom-video-container">
+                          <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
+                            <source src = "static/videos/tt_i_2.mp4"/>
+                          </video>
+			                    <div class="zoom-cursor"></div>
+                        </div>
 
                         <div role="tooltip" class = "zoom-tooltip-container">
                           <video id = "zoom_tooltip" class="zoom-tooltip" muted loop playsinline>
@@ -452,8 +459,8 @@
                       RGB Image
                   </div>
                   <div class="compare-handle">
-                      <span class="compare-handle-right-arrow"></span>
-                      <span class="compare-handle-left-arrow"></span>
+                    <div class="arrow-left" data-size="10"></div>
+                    <div class="arrow-right" data-size="10"></div>
                   </div>
                 </div>
 
@@ -477,8 +484,8 @@
                       RGB Image
                   </div>
                   <div class="compare-handle">
-                      <span class="compare-handle-right-arrow"></span>
-                      <span class="compare-handle-left-arrow"></span>
+                    <div class="arrow-left" data-size="10"></div>
+                    <div class="arrow-right" data-size="10"></div>
                   </div>
                 </div>
 
@@ -502,8 +509,8 @@
                       RGB Image
                   </div>
                   <div class="compare-handle">
-                      <span class="compare-handle-right-arrow"></span>
-                      <span class="compare-handle-left-arrow"></span>
+                    <div class="arrow-left" data-size="10"></div>
+                    <div class="arrow-right" data-size="10"></div>
                   </div>
                 </div>
 
@@ -527,8 +534,8 @@
                       RGB Image
                   </div>
                   <div class="compare-handle">
-                      <span class="compare-handle-right-arrow"></span>
-                      <span class="compare-handle-left-arrow"></span>
+                    <div class="arrow-left" data-size="10"></div>
+                    <div class="arrow-right" data-size="10"></div>
                   </div>
                 </div>
 

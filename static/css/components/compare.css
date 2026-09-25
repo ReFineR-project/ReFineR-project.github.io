@@ -1,108 +1,93 @@
 .compare-container {
-    position: relative;
-    cursor: grab;
-    overflow: hidden;
-    width: fit-content;
-    border-radius: 10px;
-    user-select: none;
+	position: relative;
+	cursor: grab;
+	overflow: hidden;
+	width: fit-content;
+	border-radius: 10px;
+	user-select: none;
 }
 
 .compare-after {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    overflow: hidden;
-    border-right: solid white 2px;
-    box-shadow: 5px 0 10px rgb(12, 12, 12);
-    object-fit: cover;
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 1;
+	overflow: hidden;
+	border-right: solid white 2px;
+	box-shadow: 5px 0 10px rgb(12, 12, 12);
+	object-fit: cover;
 
-    max-width: 100%;
+	max-width: 100%;
 }
 
 .compare-before {
-    height: 100%;
-    display: flex;
-    overflow: hidden;
+	height: 100%;
+	display: flex;
+	overflow: hidden;
 
 }
 
 .compare-before > img{
-    height: 100%;
+	height: 100%;
 }
 
 .compare-after > img {
-    height: 100%;
-    object-fit: cover;
-    object-position: top left;
+	height: 100%;
+	object-fit: cover;
+	object-position: top left;
 }
 
 .compare-after-label {
-    left: 0;
+	left: 0;
 }
 
 .compare-before-label {
-    right: 0;
+	right: 0;
 }
 
 .compare-label {
-    position: absolute;
-    bottom: 0;
-    margin: 1rem;
-    padding: 2px 10px;
-    border-radius: 0.2rem;
-    
-    background: #121212;
-    color: #fff;
-    font-size: 1em;
+	position: absolute;
+	bottom: 0;
+	margin: 1rem;
+	padding: 2px 10px;
+	border-radius: 0.2rem;
+	
+	background: #121212;
+	color: #fff;
+	font-size: 1em;
 
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    user-select: none;
-    z-index: 2;
-    pointer-events: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-o-user-select: none;
+	user-select: none;
+	z-index: 2;
+	pointer-events: none;
 }
 
-.compare-handle-left-arrow,
-.compare-handle-right-arrow {
-    width: 0;
-    height: 0;
-    border: 6px inset transparent;
-    position: absolute;
-    top: 50%;
-    margin-top: -6px;
-    z-index: 3;
-
-}
-
-.compare-handle-left-arrow {
-    border-right: 6px solid #fff;
-    left: 50%;
-    margin-left: -17px;
-}
-
-.compare-handle-right-arrow {
-    border-left: 6px solid #fff;
-    right: 50%;
-    margin-right: -17px;
+.compare-handle > .arrow-right, .compare-handle > .arrow-left{
+	background-color: white;
 }
 
 .compare-handle {
-    height: 41px;
-    width: 41px;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin-left: -21.5px;
-    margin-top: -21px;
-    border: 2px solid #fff;
-    border-radius: 1000px;
-    z-index: 20;
-    pointer-events: none;
-    box-shadow: 0 0 10px rgb(12, 12, 12);
+	position: absolute;
+
+	height: 40px;
+	width: 40px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: 2px solid #fff;
+	border-radius: 1000px;
+	z-index: 20;
+	pointer-events: none;
+	box-shadow: 0 0 10px rgb(12, 12, 12);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
 }

@@ -1,0 +1,118 @@
+
+<html>
+	<style>
+		.dropdown-container{
+			position: relative;
+			height: fit-content;
+			writing-mode: vertical-lr;
+			clip-path: rect(0 100% 10000px 0% round 10px);
+
+		}
+		.dropdown-button{
+			writing-mode: initial;
+
+			display: flex;
+			gap: 10px;
+
+			background-color: #3a3a3a;
+			border-radius: 10px;
+			color: white;
+
+			width: fit-content;
+			padding: 7px 0px 7px 15px;
+		}
+
+		.dropdown-arrow{
+			display: flex;
+			align-items: center;
+			padding: 0 15px 0 0;
+			cursor: pointer;
+		}
+
+		.dropdown-arrow > .arrow-down{
+			background-color: white;
+		}
+
+		.dropdown-content{
+			writing-mode: initial;
+		
+			position: absolute;	
+			right: 0;
+			bottom: 100%;
+
+			padding-top: 100%;
+			width: 100%;
+
+			background-color: #3a3a3a;
+			color: white;
+			border-radius: 10px 10px 10px 10px;
+			overflow: clip;
+
+			display: block;
+			z-index: -1;
+
+			transition: 
+				bottom 0.5s;
+
+		}
+
+		.list-item > a, .dropdown-button > a{
+			display:block;
+			text-decoration:none;
+			color: inherit;
+		}
+	
+	</style>
+	<head>
+		<link rel="stylesheet" href="../css/components/arrows.css">
+		<link rel="stylesheet" href="../css/components/list.css">
+	</head>
+	<body>
+		<div class="dropdown-container">
+			<div class="dropdown-button">
+				<a target="_blank" rel="noopener noreferrer"  href="../pdf/ReFineR_BMVC_compressed.pdf"><i class="fas fa-file-pdf"></i></a>
+				<a target="_blank" rel="noopener noreferrer"  href="../pdf/ReFineR_BMVC_compressed.pdf">Paper</a>
+					<div class="dropdown-arrow">
+						<div class="arrow-down" data-size="10">
+					</div>
+				</div>
+			</div>	
+			<div class="dropdown-content">
+				<div class="dropdown-margin"></div>
+					<div class="list-container" data-primary=#3a3a3a data-secondary=#555>
+						<div class="list-item"><a target="_blank" rel="noopener noreferrer"  href="../pdf/ReFineR_BMVC.pdf">Full size</a></div>
+						<div class="list-item"><a target="_blank" rel="noopener noreferrer"  href="../pdf/ReFineR_BMVC_compressed.pdf">Compressed</a></div>
+				</div>
+			</div>
+		</div>
+		
+
+	</body>
+
+  <script defer src="../js/fontawesome.all.min.js"></script>
+	<script>
+		Array.from(document.getElementsByClassName("dropdown-container"))
+			.forEach(dropdown => {
+				let arrow = dropdown.getElementsByClassName("dropdown-arrow")[0]
+				let content = dropdown.getElementsByClassName("dropdown-content")[0]
+				let contentVisible = false
+				
+				
+				arrow.addEventListener("click", (event) => {
+					event.stopPropagation();
+					contentVisible = !contentVisible
+					if (contentVisible){
+						content.style.bottom = "calc(100% - "+ content.offsetHeight +"px)"
+					}
+					else{
+						content.style.bottom = ""
+					}
+				})
+
+				document.addEventListener("click", () => {
+					contentVisible = false
+					content.style.bottom = ""
+				})
+			})
+	</script>
+</html>

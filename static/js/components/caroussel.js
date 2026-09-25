@@ -1,5 +1,9 @@
 Array.from(document.getElementsByClassName("caroussel-container"))
     .forEach(caroussel => {
+        caroussel.addEventListener("dragstart", (event) => {
+			event.preventDefault();
+        })
+
         const nshow = parseInt(caroussel.getAttribute("caroussel-show-items"))
         const itemContainer = caroussel.getElementsByClassName("caroussel-items")[0]
         const sliderContainer = caroussel.getElementsByClassName("caroussel-slider")[0]
@@ -14,8 +18,7 @@ Array.from(document.getElementsByClassName("caroussel-container"))
         const items = Array.from(caroussel.getElementsByClassName("caroussel-item"))
         const nitems = items.length
 
-        sliderContainer.style.width = "calc(100% + 10px)"
-        itemContainer.style.width = (2 * nitems / nshow * 100) + "%"
+        itemContainer.style.width = "calc(" + (2 * nitems / nshow ) + " * 100% + 20px)"
 
         let off = 1 / (2 * nitems) * 100
 
@@ -34,7 +37,6 @@ Array.from(document.getElementsByClassName("caroussel-container"))
             selectsContainer.appendChild(select)
             selects.push(select)
         }
-
 
         const time = 200
         const options = {

@@ -4,10 +4,14 @@
 	</head>
   <body>
 		<div class="zoom-container">
-			<video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
-				<!-- :( https://github.com/microsoft/vscode/issues/289795#event-24538628765 -->
-				<source src = "./assets/video.mp4" type="video/mp4"/> 
-			</video>
+			<div class="zoom-video-container">
+				<div class="zoom-cursor"></div>
+				<video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
+					<div class="zoom-cursor"></div>
+					<source src = "./assets/video.mp4" type="video/mp4"/> 
+				</video>
+			</div>
+
 
 			<div role="tooltip" class = "zoom-tooltip-container">
 				<video id = "zoom_tooltip" class="zoom-tooltip" muted loop playsinline>

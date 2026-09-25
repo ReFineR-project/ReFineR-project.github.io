@@ -1,0 +1,36 @@
+
+
+<html>
+  <style>
+    .list-container{
+      width: 100px;
+      --color-primary: attr(data-primary type(*));
+      --color-secondary: attr(data-secondary type(*));
+    }
+    .list-item:nth-child(even){
+      background-color: var(--color-primary);
+    }
+    .list-item:nth-child(odd){
+      background-color: var(--color-secondary);
+    }
+
+    .list-item{
+      width: 100%;
+    }
+
+    .list-item:hover{
+      filter: opacity(0.8);
+    }
+  </style>
+<body>
+  <div class="list-container" data-primary=#800080 data-secondary=#3f9c7e>
+    <div class="list-item">bonjour</div>
+    <div class="list-item">hey</div>
+    <div class="list-item">hey</div>
+    <div class="list-item">hey</div>
+    <div class="list-item">hey</div>
+    <div class="list-item">hey</div>
+    <div class="list-item">hey</div>
+  </div>
+</body>
+</html>

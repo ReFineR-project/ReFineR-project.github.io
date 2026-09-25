@@ -1,0 +1,20 @@
+.list-container{
+  --color-primary: attr(data-primary type(*));
+  --color-secondary: attr(data-secondary type(*));
+}
+.list-item:nth-child(even){
+  background-color: var(--color-primary);
+}
+.list-item:nth-child(odd){
+  background-color: var(--color-secondary);
+}
+
+.list-item{
+  width: 100%;
+  padding: 5px 10px 5px 10px;
+  transition: filter 0.1s;
+}
+
+.list-item:hover{
+  filter: opacity(0.8);
+}

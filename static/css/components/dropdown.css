@@ -1,0 +1,56 @@
+.dropdown-container{
+  position: relative;
+  writing-mode: vertical-lr;
+  width: fit-content;
+  height: fit-content;
+}
+
+.dropdown-top{
+  position: relative;
+  writing-mode: initial;
+  z-index: 2;
+  overflow: clip;
+}
+
+.dropdown-clip{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: rect(50% 100% calc(infinity * 1px) 0);
+  z-index: 0;
+}
+
+.dropdown-bottom{
+  width: 100%;
+  height: fit-content;
+
+  position: absolute;
+  padding-top: 100%;
+  overflow: clip;
+
+  bottom: 100%;
+  left: 0;
+  writing-mode: initial;
+  transition: transform 0.2s;
+
+  border-radius: 0 0 10px 10px;
+}
+
+.dropdown-bottom[open]{
+  transform: translateY(100%);
+}
+
+.dropdown-toggle{
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.dropdown-toggle{
+  transition: transform 0.2s;
+}
+.dropdown-toggle[open]{
+  transform: rotate(-180deg);
+}

@@ -19,19 +19,15 @@
 	border-right: solid white 2px;
 	box-shadow: 5px 0 10px rgb(12, 12, 12);
 	object-fit: cover;
-
-	max-width: 100%;
 }
 
 .compare-before {
-	height: 100%;
 	display: flex;
 	overflow: hidden;
-
 }
 
 .compare-before > img{
-	height: 100%;
+	width: 100%;
 }
 
 .compare-after > img {
@@ -68,10 +64,6 @@
 	pointer-events: none;
 }
 
-.compare-handle > .arrow-right, .compare-handle > .arrow-left{
-	background-color: white;
-}
-
 .compare-handle {
 	position: absolute;
 
@@ -90,4 +82,8 @@
 	align-items: center;
 	justify-content: center;
 	gap: 15px;
+}
+
+.compare-arrow{
+	color: white;
 }

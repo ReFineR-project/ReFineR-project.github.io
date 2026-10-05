@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html data-theme>
+<html>
 <head>
   <meta charset="utf-8">
   <meta name="description"
         content="ReFineR">
   <meta name="keywords" content="ReFineR">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
   <title>ReFineR</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -30,25 +31,22 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/components/pages.css">
+  <link rel="stylesheet" href="./static/css/components/caroussel.css">
   <link rel="stylesheet" href="./static/css/components/compare.css">
   <link rel="stylesheet" href="./static/css/components/zoom.css">
-  <link rel="stylesheet" href="./static/css/components/pages.css">
   <link rel="stylesheet" href="./static/css/components/day.css">
-  <link rel="stylesheet" href="./static/css/components/caroussel.css">
-	<link rel="stylesheet" href="./static/css/components/arrows.css">
+  <link rel="stylesheet" href="./static/css/components/misc.css">
+  <link rel="stylesheet" href="./static/css/components/dropdown.css">
 
   <link rel="icon" href="./static/images/logo_mines.svg">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/index.js"></script>
 </head>
-<body data-theme>
+<body>
 
-<div class="day-container" id = "color-mode" style = "position: absolute; right: 0; top: 0; margin-top: 50px; margin-right: 50px;">
-    <div class="day-button">
-    </div>
-</div>
+<day-mode style = "position: absolute; z-index: 10; right: 0; top: 0; margin-top: 50px; margin-right: 50px;"></day-mode>
 <!-- HEADER -->
 <section class="hero" id = "main-content">
   <div class="hero-body">
@@ -56,10 +54,10 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           
-          <h1 class="title is-2 publication-title" style="margin-top: 0; margin-bottom: 0" data-theme>ReFineR: Single image to dense point cloud registration at pixel level with point splatting</h1>
+          <h1 class="title is-2 publication-title" style="margin-top: 0; margin-bottom: 0">ReFineR: Single image to dense point cloud registration at pixel level with point splatting</h1>
 
           <br>
-          <h2 class="title is-4" style="margin-top: 0; margin-bottom: 0" data-theme>BMVC 2026</h2>
+          <h2 class="title is-4" style="margin-top: 0; margin-bottom: 0">BMVC 2026</h2>
           <br>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -84,142 +82,67 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="static/pdf/ReFineR_BMVC_compressed.pdf"
-                    class="external-link button is-normal is-rounded" data-theme style="-webkit-text-fill-color: red">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                  <span class="icon">
+              <!-- PDF -->
+              <drop-content>
+                <div class = "link-badge">
+                  <a target="_blank" rel="noopener noreferrer"  href="../pdf/ReFineR_BMVC_compressed.pdf"><i class="fas fa-file-pdf"></i></a>
+                  <a target="_blank" rel="noopener noreferrer"  href="../pdf/ReFineR_BMVC_compressed.pdf">Paper</a>
+                  <div class="dropdown-toggle">
                       <i class="fas fa-caret-down"></i>
-                  </span>
-                </a>
-              </span>
+                  </div>
+                </div>
+                <div class="list-container">
+                  <div class="list-item"><a target="_blank" rel="noopener noreferrer"  href="../pdf/ReFineR_BMVC.pdf">Full size</a></div>
+                  <div class="list-item"><a target="_blank" rel="noopener noreferrer"  href="../pdf/ReFineR_BMVC_compressed.pdf">Compressed</a></div>
+                </div>
+              </drop-content>
 
-              <span class="link-block">
-                <a href="?"
-                    class="external-link button is-normal is-rounded" data-theme style="-webkit-text-fill-color: red">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+              <!-- ArXiv --> 
+              <div class = "link-badge" style = "color: red;">
+                <a target="_blank" rel="noopener noreferrer"  href="?"><i class="ai ai-arxiv"></i></a>
+                <a target="_blank" rel="noopener noreferrer"  href="?">arXiv</a>
+              </div>
 
-              <!-- Poster Link. -->
-              <span class="link-block">
-                <a href="?" style="-webkit-text-fill-color: red"
-                  class="external-link button is-normal is-rounded" data-theme
-                  target="_blank" rel="noopener">
-                  <span class="icon">
-                    <i class="fas fa-image"></i>
-                  </span>
-                  <span>Poster</span>
-                </a>
-              </span>
+              <!-- Poster -->
+              <div class = "link-badge" style = "color: red;">
+                <a target="_blank" rel="noopener noreferrer"  href="?"><i class="fas fa-image"></i></a>
+                <a target="_blank" rel="noopener noreferrer"  href="?">Poster</a>
+              </div>
 
-              <!-- YouTube Video Link -->
-              <span class="link-block">
-                <a href="" style="-webkit-text-fill-color: red"
-                  class="external-link button is-normal is-rounded" data-theme
-                  target="_blank" rel="noopener">
-                  <span class="icon">
-                    <i class="fas fa-database"></i>
-                  </span>
-                  <span>Data</span>
-                </a>
-              </span>
+              <!-- Data -->
+              <div class = "link-badge" style = "color: red;">
+                <a target="_blank" rel="noopener noreferrer"  href="?"><i class="fas fa-database"></i></a>
+                <a target="_blank" rel="noopener noreferrer"  href="?">Data</a>
+              </div>
           
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="" style="-webkit-text-fill-color: red"
-                    class="external-link button is-normal is-rounded"  data-theme>
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
+              <!-- Github Link. -->
+              <div class = "link-badge" style = "color: red;">
+                <a target="_blank" rel="noopener noreferrer"  href="?"><i class="fab fa-github"></i></a>
+                <a target="_blank" rel="noopener noreferrer"  href="?">Code</a>
+              </div>
 
             </div>
           </div>
-
-          <!-- <div class="video-border is-glass">
-            <div id="intr_video" class="video-wrapper">
-              
-              <div class="video-after">
-                <video id="videoAfter" src="static/videos/rg_final_compressed.mp4" autoplay muted loop></video>
-                <div class="video-afterPosition afterLabel">
-                  RayGauss
-                </div>
-              </div>
-              
-              <div class="video-before">
-                <div class="video-before-inset">
-                  <video id="videoBefore" src="static/videos/gs_final_compressed.mp4" autoplay muted loop></video>
-                  <div class="video-beforePosition beforeLabel">
-                    3D Gaussian Splatting
-                  </div>
-                </div>
-              </div>
-
-              <div class="video-handle">
-                <span class="handle-right-arrow"></span>
-                <span class="handle-left-arrow"></span>
-              </div>
-
-            </div>
-          </div> -->
-
-
-
-
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- VIDEO CARROUSEL -->
-<section class="hero is-light is-small" data-theme id = "caroussel">
+<!-- VIDEO CARROUSEL (todo: adapt show items to device size)-->
+<section class="hero is-light is-small" id = "caroussel">
   <span style="-webkit-text-fill-color: red; text-align: center;">TODO</span>
   <div class="hero-body">
     <div class="container">
-
-      <div class="caroussel-container" caroussel-show-items = 3>
-        <div class = "caroussel-left">
-          <div class="arrow-left" data-size="15"></div>
+      <scroll-caroussel show-items = 4>
+        <video autoplay controls muted loop playsinline><source src = "static/samples/assets/video.mp4"/></video>
+        <img src="static/samples/assets/img.png">
+        <div style = "background-color: blue;">
+          <img src="static/samples/assets/img.png" style = "width: 45%; display: inline;">
+          <img src="static/samples/assets/img.png" style = "width: 45%; display: inline;">
         </div>
-        <div class="caroussel-slider">
-            <div class="caroussel-items">
-                <div class="caroussel-item">
-                    <video autoplay controls muted loop playsinline>
-                        <source src = "static/samples/assets/video.mp4"/>
-                    </video>
-                </div>
-
-                <div class="caroussel-item">
-                    <img src="static/samples/assets/img.png" style = "width: 45%; display: inline;">
-                    <img src="static/samples/assets/img.png" style = "width: 45%; display: inline;">
-                </div>
-
-                <div class="caroussel-item">
-                    <img src="static/samples/assets/img.png">
-                </div>
-
-                <div class="caroussel-item">
-                    <img src="static/samples/assets/img.png">
-                </div>
-            </div>
-        </div>
-        <div class = "caroussel-right">
-          <div class="arrow-right" data-size="15"></div>
-        </div>
-        <div class="caroussel-selects">
-        </div>
-      </div>
+        <img src="static/samples/assets/img.png">
+      </scroll-caroussel>
     </div>
   </div>
 </section>
@@ -230,24 +153,21 @@
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-nine-tenths">
-        <h2 class="title is-3" data-theme>Abstract</h2>
+        <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
             Cameras and LiDARs (Light Detection and Ranging) provide complementary observations of the same scene: cameras capture rich appearance cues while LiDAR sensors provide accurate geometric measurements. In this work, we address the problem of fine image-to-point cloud registration from a single image and a roughly estimated camera pose. On robotic platforms, residual reprojection errors of several pixels are commonly observed even after calibration due to temporal desynchronization, mechanical vibrations, or inaccuracies in point cloud reconstruction. Such errors can lead to decimeter-level geometric discrepancies at moderate distances and significantly affect multiple downstream tasks, such as dense cross-modal supervision, texture mapping, and semantic label transfer. To address this challenge, we introduce ReFineR: an offline framework to finely register individual images to pre-reconstructed point clouds. ReFineR builds upon differentiable point splatting rasterization and a smooth Gradient Orientation Measure (GOM) to iteratively refine the camera pose through analysis-by-synthesis optimization. We evaluated the method on a curated dataset of manually calibrated images collected from heterogeneous data sources. Furthermore, we show that an automatic point cloud rescale factor can be estimated prior to optimization, enabling robust refinement across a wide range of scenarios using a single scale-invariant formulation.
           </p>
-            <img src="static/images/pipeline.svg" style="width: 100%;" id = "figure" data-theme>
+            <img style="width: 100%;" id = "figure">
         </div>
       </div>
     </div>
-
-    
   </div>
-
 </section>
 
 <section class="section">
   <div class="container">
-    <div class="page-container" data-theme>
+    <div class="page-container">
       <div class="page-labels">
         <input class = "page-radio" type="radio" id = "Tanks And Temples" name = "dataset" value = "Tanks And Temples" checked>
         <label class = "page-label" for="Tanks And Temples">Tanks And Temples</label>
@@ -261,7 +181,7 @@
          
         <div class="page" ref = "Tanks And Temples">
 
-          <div class="page-container" data-theme>
+          <div class="page-container">
             <div class="page-labels">
               <input class = "page-radio" type="radio" id = "img0" name = "images" value = "img0" checked>
               <label class = "page-label" for="img0">
@@ -277,78 +197,32 @@
                 <div class="columns is-centered">
                   <div class="column">
                     <div class="content has-text-justified">
-                      <div class="compare-container">
-                        <div class="compare-before">
-                            <img src="static/images/renders/tt_ref.png">
-                        </div>
-                        <div class="compare-after">
-                            <img src="static/images/renders/tt_i_before.png">
-                        </div>
-                        <div class="compare-after-label compare-label">
-                            10px error
-                        </div>
-                        <div class="compare-before-label compare-label">
-                            RGB Image
-                        </div>
-                        <div class="compare-handle">
-                          <div class="arrow-left" data-size="10"></div>
-                          <div class="arrow-right" data-size="10"></div>
-                        </div>
-                      </div>
+                      <image-compare 
+                        data-src-before = "static/images/renders/tt_i_before.png"
+                        data-src-after = "static/images/renders/tt_ref.png"
+                        data-label-before = "10px error"
+                        data-label-after = "RGB Image">
+                      </image-compare>
+
                     </div>
                     <div class="content">
- 
-                      <div class="zoom-container">
-                        <div class="zoom-video-container">
-			                    <div class="zoom-cursor"></div>
-                          <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
-                            <source src = "static/videos/tt_i_fused.mp4"/>
-                          </video> 
-                        </div>
-                        <div role="tooltip" class = "zoom-tooltip-container">
-                          <video id = "zoom_tooltip" class="zoom-tooltip" muted loop playsinline>
-                            <source src = "static/videos/tt_i_fused.mp4"/>
-                          </video>
-                        </div>
-                      </div>
+                      <video-zoom data-src-video = "static/videos/tt_i_fused.mp4"></video-zoom>
                     </div>
                   </div>
 
                   <div class="column">
                     <div class="content">
-                      <div class="compare-container">
-                        <div class="compare-before">
-                            <img src="static/images/renders/tt_ref.png">
-                        </div>
-                        <div class="compare-after">
-                            <img src="static/images/renders/tt_i_after.png">
-                        </div>
-                        <div class="compare-after-label compare-label">
-                            ReFineR
-                        </div>
-                        <div class="compare-before-label compare-label">
-                            RGB Image
-                        </div>
-                        <div class="compare-handle">
-                          <div class="arrow-left" data-size="10"></div>
-                          <div class="arrow-right" data-size="10"></div>
-                        </div>
-                      </div>
+
+                      <image-compare 
+                        data-src-before = "static/images/renders/tt_i_after.png"
+                        data-src-after = "static/images/renders/tt_ref.png"
+                        data-label-before = "ReFineR"
+                        data-label-after = "RGB Image">
+                      </image-compare>
+
                     </div>
                     <div class="content">
-                      <div class="zoom-container">
-                        <div class="zoom-video-container">
-			                    <div class="zoom-cursor"></div>
-                          <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
-                            <source src = "static/videos/tt_i.mp4"/>
-                          </video>
-                        </div>
-                        <div role="tooltip" class = "zoom-tooltip-container">
-                          <video id = "zoom_tooltip" class="zoom-tooltip" muted loop playsinline>
-                            <source src = "static/videos/tt_i.mp4"/>
-                          </video>
-                        </div>
-                      </div>
+                      <video-zoom data-src-video = "static/videos/tt_i.mp4"></video-zoom>
                     </div>
                   </div>
                 </div>
@@ -358,78 +232,33 @@
                 <div class="columns is-centered">
                   <div class="column">
                     <div class="content has-text-justified">
-                      <div class="compare-container">
-                        <div class="compare-before">
-                            <img src="static/images/renders/tt_ref_2.png">
-                        </div>
-                        <div class="compare-after">
-                            <img src="static/images/renders/tt_i_before_2.png">
-                        </div>
-                        <div class="compare-after-label compare-label">
-                            10px error
-                        </div>
-                        <div class="compare-before-label compare-label">
-                            RGB Image
-                        </div>
-                        <div class="compare-handle">
-                          <div class="arrow-left" data-size="10"></div>
-                          <div class="arrow-right" data-size="10"></div>
-                        </div>
-                      </div>
+
+                      <image-compare 
+                        data-src-before = "static/images/renders/tt_i_before_2.png"
+                        data-src-after = "static/images/renders/tt_ref_2.png"
+                        data-label-before = "10px error"
+                        data-label-after = "RGB Image">
+                      </image-compare>
+
                     </div>
                     <div class="content">
-                      <div class="zoom-container">
-                        <div class="zoom-video-container">
-                          <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
-                            <source src = "static/videos/tt_i_fused_2.mp4"/>
-                          </video>
-			                    <div class="zoom-cursor"></div>
-                        </div>
-                        <div role="tooltip" class = "zoom-tooltip-container">
-                          <video id = "zoom_tooltip" class="zoom-tooltip" muted loop playsinline>
-                            <source src = "static/videos/tt_i_fused_2.mp4"/>
-                          </video>
-                        </div>
-                      </div>
+                      <video-zoom data-src-video = "static/videos/tt_i_fused_2.mp4"></video-zoom>
                     </div>
                   </div>
 
                   <div class="column">
                     <div class="content">
-                      <div class="compare-container">
-                        <div class="compare-before">
-                            <img src="static/images/renders/tt_ref_2.png">
-                        </div>
-                        <div class="compare-after">
-                            <img src="static/images/renders/tt_i_after_2.png">
-                        </div>
-                        <div class="compare-after-label compare-label">
-                            ReFineR
-                        </div>
-                        <div class="compare-before-label compare-label">
-                            RGB Image
-                        </div>
-                        <div class="compare-handle">
-                          <div class="arrow-left" data-size="10"></div>
-                          <div class="arrow-right" data-size="10"></div>
-                        </div>
-                      </div>
+
+                      <image-compare 
+                        data-src-before = "static/images/renders/tt_i_after_2.png"
+                        data-src-after = "static/images/renders/tt_ref_2.png"
+                        data-label-before = "ReFineR"
+                        data-label-after = "RGB Image">
+                      </image-compare>
+
                     </div>
                     <div class="content">
-                      <div class="zoom-container">
-                        <div class="zoom-video-container">
-                          <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
-                            <source src = "static/videos/tt_i_2.mp4"/>
-                          </video>
-			                    <div class="zoom-cursor"></div>
-                        </div>
-
-                        <div role="tooltip" class = "zoom-tooltip-container">
-                          <video id = "zoom_tooltip" class="zoom-tooltip" muted loop playsinline>
-                            <source src = "static/videos/tt_i_2.mp4"/>
-                          </video>
-                        </div>
-                      </div>
+                      <video-zoom data-src-video = "static/videos/tt_i_2.mp4"></video-zoom>
                     </div>
                   </div>
                 </div>
@@ -444,133 +273,56 @@
           <div class="columns is-centered">
             <div class="column">
               <div class="content has-text-justified">
-
-                <div class="compare-container">
-                  <div class="compare-before">
-                      <img src="static/images/renders/tt_ref_2.png">
-                  </div>
-                  <div class="compare-after">
-                      <img src="static/images/renders/tt_i_after_2.png">
-                  </div>
-                  <div class="compare-after-label compare-label">
-                      ReFineR
-                  </div>
-                  <div class="compare-before-label compare-label">
-                      RGB Image
-                  </div>
-                  <div class="compare-handle">
-                    <div class="arrow-left" data-size="10"></div>
-                    <div class="arrow-right" data-size="10"></div>
-                  </div>
-                </div>
+                <image-compare 
+                  data-src-before = "static/images/renders/tt_i_after_2.png"
+                  data-src-after = "static/images/renders/tt_ref_2.png"
+                  data-label-before = "ReFineR"
+                  data-label-after = "RGB Image">
+                </image-compare>
 
               </div>
             </div>
 
             <div class="column">
               <div class="content has-text-justified">
-
-                <div class="compare-container">
-                  <div class="compare-before">
-                      <img src="static/images/renders/tt_ref_2.png">
-                  </div>
-                  <div class="compare-after">
-                      <img src="static/images/renders/tt_i_after_2.png">
-                  </div>
-                  <div class="compare-after-label compare-label">
-                      ReFineR
-                  </div>
-                  <div class="compare-before-label compare-label">
-                      RGB Image
-                  </div>
-                  <div class="compare-handle">
-                    <div class="arrow-left" data-size="10"></div>
-                    <div class="arrow-right" data-size="10"></div>
-                  </div>
-                </div>
+                <image-compare 
+                  data-src-before = "static/images/renders/tt_i_after_2.png"
+                  data-src-after = "static/images/renders/tt_ref_2.png"
+                  data-label-before = "ReFineR"
+                  data-label-after = "RGB Image">
+                </image-compare>
 
               </div>
             </div>
 
             <div class="column">
               <div class="content has-text-justified">
-
-                <div class="compare-container">
-                  <div class="compare-before">
-                      <img src="static/images/renders/tt_ref_2.png">
-                  </div>
-                  <div class="compare-after">
-                      <img src="static/images/renders/tt_i_after_2.png">
-                  </div>
-                  <div class="compare-after-label compare-label">
-                      ReFineR
-                  </div>
-                  <div class="compare-before-label compare-label">
-                      RGB Image
-                  </div>
-                  <div class="compare-handle">
-                    <div class="arrow-left" data-size="10"></div>
-                    <div class="arrow-right" data-size="10"></div>
-                  </div>
-                </div>
+                <image-compare 
+                  data-src-before = "static/images/renders/tt_i_after_2.png"
+                  data-src-after = "static/images/renders/tt_ref_2.png"
+                  data-label-before = "ReFineR"
+                  data-label-after = "RGB Image">
+                </image-compare>
 
               </div>
             </div>
 
             <div class="column">
               <div class="content">
-
-                <div class="compare-container">
-                  <div class="compare-before">
-                      <img src="static/images/renders/tt_ref_2.png">
-                  </div>
-                  <div class="compare-after">
-                      <img src="static/images/renders/tt_i_after_2.png">
-                  </div>
-                  <div class="compare-after-label compare-label">
-                      ReFineR
-                  </div>
-                  <div class="compare-before-label compare-label">
-                      RGB Image
-                  </div>
-                  <div class="compare-handle">
-                    <div class="arrow-left" data-size="10"></div>
-                    <div class="arrow-right" data-size="10"></div>
-                  </div>
-                </div>
+                <image-compare 
+                  data-src-before = "static/images/renders/tt_i_after_2.png"
+                  data-src-after = "static/images/renders/tt_ref_2.png"
+                  data-label-before = "ReFineR"
+                  data-label-after = "RGB Image">
+                </image-compare>
 
               </div>
             </div>
           </div>
-
-          <!-- <div class="content">
-            <div class="zoom-container">
-              <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
-                <source src = "static/videos/tt_fused.mp4"/>
-              </video>
-
-              <div role="tooltip" class = "zoom-tooltip-container">
-                <video id = "zoom_tooltip" class="zoom-tooltip" muted loop playsinline>
-                  <source src = "static/videos/tt_fused.mp4"/>
-                </video>
-              </div>
-            </div>
-          </div> -->
         </div>
-
-        <!-- <div class="page" ref = "nuScenes">
-            Bonjour3
-            <img src="assets/img.png" width = 400>
-        </div> -->
       </div>
     </div>
-
-    
-      
   </div>
-
-
-
 </section>
 
 <script src="static/js/components/day.js"></script>
@@ -578,27 +330,17 @@
 <script src="static/js/components/zoom.js"></script>
 <script src="static/js/components/compare.js"></script>
 <script src="static/js/components/caroussel.js"></script>
-
+<script src="static/js/components/dropdown.js"></script>
 
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop">
-    <h2 class="title" data-theme>BibTeX</h2>
-    <pre data-theme id = "citation"><code style = "color:red">TODO</code></pre>
+    <h2 class="title">BibTeX</h2>
+    <pre id = "citation"><code style = "color:red">TODO</code></pre>
   </div>
 </section>
 
-
-<footer class="footer" data-theme>
+<footer class="footer">
   <div class="container">
-    <!-- <div class="content has-text-centered">
-      <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div> -->
     <div class="columns is-centered">
       <div class="column is-8">
         <div class="content">

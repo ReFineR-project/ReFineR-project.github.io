@@ -1,56 +1,70 @@
+
+@media (max-width: 1050px) {
+  #main-content{
+      margin-top: 100px;
+  }
+}
+
 :root{
+  color-scheme: light dark;
   --color-dark-primary: #3a3a3a;
   --color-dark-secondary: #4a4a4a;
+  --color-light-primary: #ffffff;
+  --color-light-secondary: #f5f5f5;
+
+  --color-primary: light-dark(var(--color-light-primary), var(--color-dark-primary));
+  --color-secondary: light-dark(var(--color-light-secondary), var(--color-dark-secondary));
+  --color-text: light-dark(black, white);
+
+  --color-invert-primary: light-dark(var(--color-dark-primary), var(--color-light-primary));
+  --color-invert-secondary: light-dark(var(--color-dark-secondary), var(--color-light-secondary));
+  --color-invert-text: light-dark(white, black);
 }
 
-html[data-theme = dark]{
-  background-color: var(--color-dark-primary);
-}
-
-[data-theme]{
+html{
+  background-color: var(--color-primary);
+  color: var(--color-text);
   transition:
     background-color 0.5s,
     color 0.5s;
 }
 
-[data-theme = "dark"]{
-  color: white;
-}
-
 body {
+  background-color: var(--color-primary);
+  color: var(--color-text);
+
   font-family: 'Noto Sans', sans-serif;
+  transition: 
+    background-color 0.5s,
+    color 0.5s,
+    opacity 2s;
 }
 
-#caroussel[data-theme = dark]{
-  background-color: var(--color-dark-secondary);
+@starting-style{
+body{
+		opacity: 0;
+	}
 }
 
+#caroussel{
+  background-color: var(--color-secondary);
+  color: var(--color-text);
+  transition:
+    background-color 0.5s,
+    color 0.5s;
+}
 
 .footer .icon-link {
-    font-size: 25px;
-    color: #000;
+  font-size: 25px;
+  color: #000;
 }
 
-.footer[data-theme = dark]{
-  background-color: var(--color-dark-secondary);
+.footer{
+  background-color: var(--color-secondary);
+  transition:
+    background-color 0.5s,
+    color 0.5s;
 }
-
-.link-block a {
-    display: inline-block;
-    vertical-align: top;
-    height: 100%; /* Assurez-vous que la hauteur est la même pour chaque bloc */
-    background-color: var(--color-dark-secondary);
-    color: white;
-}
-
-.link-block a[data-theme = dark]{
-  background-color: white;
-  color: black;
-}
-.dnerf {
-  font-variant: small-caps;
-}
-
 
 .teaser .hero-body {
   padding-top: 0;
@@ -82,31 +96,31 @@ body {
 
 
 .publication-title {
-    font-family: 'Google Sans', sans-serif;
+  font-family: 'Google Sans', sans-serif;
 }
 
 .publication-authors {
-    font-family: 'Google Sans', sans-serif;
+  font-family: 'Google Sans', sans-serif;
 }
 
 .publication-venue {
-    color: #555;
-    width: fit-content;
-    font-weight: bold;
+  color: #555;
+  width: fit-content;
+  font-weight: bold;
 }
 
 .publication-awards {
-    color: #ff3860;
-    width: fit-content;
-    font-weight: bolder;
+  color: #ff3860;
+  width: fit-content;
+  font-weight: bolder;
 }
 
 .publication-authors a {
-   color: hsl(204, 86%, 53%) !important;
+  color: hsl(204, 86%, 53%) !important;
 }
 
 .publication-authors a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .author-block {
@@ -114,21 +128,21 @@ body {
 }
 
 .publication-video {
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding-bottom: 56.25%;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
 
-    overflow: hidden;
-    border-radius: 10px !important;
+  overflow: hidden;
+  border-radius: 10px !important;
 }
 
 .publication-video iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -182,16 +196,26 @@ body {
   
 }
 
-@media (max-width: 850px) {
-    #main-content{
-        margin-top: 100px;
-    }
+#citation{
+  background-color: var(--color-secondary);
+  transition:
+    background-color 0.5s;
 }
 
-#citation[data-theme = dark]{
-  background-color: var(--color-dark-secondary);
+#figure{
+  content: light-dark(url("../images/pipeline.svg"), url("../images/pipeline_dark.svg"));
 }
 
-#figure[data-theme = dark]{
-  content: url("../images/pipeline_dark.svg")
+.title{
+  color: var(--color-text);
+  font-weight: 600;
+  line-height: 1.125;
+  transition:
+    color 0.5s;
+}
+
+.publication-links{
+  display: flex;
+  gap: 5px;
+  justify-content: center;
 }

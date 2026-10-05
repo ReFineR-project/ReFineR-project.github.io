@@ -1,43 +1,41 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../css/components/caroussel.css">
-	<link rel="stylesheet" href="../css/components/arrows.css">
-
+  <title>Document</title>
 </head>
-  <body>
-    <div class="caroussel-container" caroussel-show-items = 3>
-			<div class = "caroussel-left">
-				<div class="arrow-left" data-size="15"></div>
-			</div>
-			<div class="caroussel-slider">
-					<div class="caroussel-items">
-							<div class="caroussel-item">
-									<video autoplay controls muted loop playsinline>
-											<source src = "assets/video.mp4"/>
-									</video>
-							</div>
+<body>
+  <style>
+    .test{
+      background-color: blue;
+    }
 
-							<div class="caroussel-item">
-									<img src="assets/img.png" style = "width: 45%; display: inline;">
-									<img src="assets/img.png" style = "width: 45%; display: inline;">
-							</div>
+    scroll-caroussel{
+      opacity: 1;
+      transition: opacity 1s;
+    }
+    @starting-style{
+    scroll-caroussel{
+        opacity: 0;
+      }
+    }
 
-							<div class="caroussel-item">
-									<img src="assets/img.png">
-							</div>
-
-							<div class="caroussel-item">
-									<img src="assets/img.png">
-							</div>
-					</div>
-			</div>
-			<div class = "caroussel-right">
-					<div class="arrow-right" data-size="15"></div>
-			</div>
-			<div class="caroussel-selects">
-			</div>
+  </style>
+  <scroll-caroussel show-items = 3>
+    <video autoplay controls muted loop playsinline>
+        <source src = "assets/video.mp4"/>
+    </video>
+    <img src="assets/img.png">
+    <div class = "test">
+      <img src="assets/img.png" style = "width: 45%; display: inline;">
+      <img src="assets/img.png" style = "width: 45%; display: inline;">
     </div>
-  </body>
+    <img src="assets/img.png">
+  </scroll-caroussel>
+</body>
 
-	<script src="../js/components/caroussel.js"></script>
+<script defer src="../js/fontawesome.all.min.js"></script>
+<script defer src="../js/components/caroussel.js"></script>
 </html>

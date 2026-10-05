@@ -1,22 +1,25 @@
-<html>
-	<style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/components/day.css">
+</head>
+<body>
+  <style>
+		:root{
+      color-scheme: light dark;
+    }
+
 		body{
-			transition: background-color 0.2s;
+			transition: background-color 0.5s;
+			background-color: light-dark(white, rgb(71, 6, 6));
 		}
-		body[data-theme = "dark"]{
-			background-color: darkslategrey;
-		}
-
 	</style>
-	<head>
-		<link rel="stylesheet" href="../css/components/day.css">
-	</head>
-  <body data-theme>
-		<div class="day-container">
-			<div class="day-button">
-			</div>
-		</div>
-  </body>
 
-	<script src="../js/components/day.js"></script>
+  <day-mode style = "margin-top: 200px; display: block;"></day-mode>
+</body>
+<script src = "../js/components/day.js"></script>
 </html>

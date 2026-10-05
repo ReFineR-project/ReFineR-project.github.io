@@ -1,35 +1,25 @@
-<html>
-	<style>
-		.compare-container{
-			height: 500px;
-		}
-	</style>
-	<head>
-		<link rel="stylesheet" href="../css/components/compare.css">
-		<link rel="stylesheet" href="../css/components/arrows.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/components/compare.css">
+  <title>Document</title>
 
-	</head>
-  <body>
-    <div class="compare-container">
-			<div class="compare-before">
-					<img src="assets/before.png">
-			</div>
-			<div class="compare-after">
-					<img src="assets/after.png">
-			</div>
-			<div class="compare-after-label compare-label">
-					ReFineR
-			</div>
-			<div class="compare-before-label compare-label">
-					RGB Image
-			</div>
-
-			<div class="compare-handle">
-					<div class="arrow-left" data-size="10"></div>
-					<div class="arrow-right" data-size="10"></div>
-			</div>
-    </div>
-  </body>
-
-	<script src="../js/components/compare.js"></script>
+</head>
+<body>
+  <style>
+    body{
+      width: 500px;
+    }
+  </style>
+  <image-compare 
+    data-src-before = "assets/before.png"
+    data-src-after = "assets/after.png"
+    data-label-before = "RGB Image"
+    data-label-after = "ReFineR"
+  ></image-compare>
+</body>
+<script defer src="../js/fontawesome.all.min.js"></script>
+<script src="../js/components/compare.js"></script>
 </html>

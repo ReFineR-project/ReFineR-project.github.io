@@ -1,25 +1,19 @@
-<html>
-	<head>
-		<link rel="stylesheet" href="../css/components/zoom.css">
-	</head>
-  <body>
-		<div class="zoom-container">
-			<div class="zoom-video-container">
-				<div class="zoom-cursor"></div>
-				<video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
-					<div class="zoom-cursor"></div>
-					<source src = "./assets/video.mp4" type="video/mp4"/> 
-				</video>
-			</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/components/zoom.css">
 
-
-			<div role="tooltip" class = "zoom-tooltip-container">
-				<video id = "zoom_tooltip" class="zoom-tooltip" muted loop playsinline>
-				<source src = "./assets/video.mp4" type="video/mp4"/>
-				</video>
-			</div>
-    </div>
-  </body>
-
-	<script src="../js/components/zoom.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    body{
+      width: 500px;
+    }
+  </style>
+  <video-zoom csssheet = "../css/components/zoom.css" data-src-video = "assets/video.mp4"></video-zoom>
+</body>
+<script src = "../js/components/zoom.js"></script>
 </html>

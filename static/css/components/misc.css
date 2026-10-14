@@ -1,0 +1,72 @@
+.link-badge{
+  display: inline flex;
+  gap: 10px;
+
+  /* background-color: var(--color-invert-secondary, white); */
+  background-color: var(--color-accent);
+  /* color: var(--color-invert-text, black); */
+  color: black;
+
+  width: fit-content;
+  padding: 7px 15px 7px 15px;
+
+  border-radius: 1000px;
+  transition: 
+    color 0.5s,
+    background-color 0.5s;
+
+  /* border: solid 1px #9b9b9b; */
+}
+
+/* .link-badge:hover{
+  color: var(--color-text);
+} */
+
+.list-item > a, .link-badge > a{
+  display:block;
+  text-decoration:none;
+  color: inherit;
+}
+
+.list-container{
+  --color-even: attr(data-primary type(*), var(--color-accent));
+  --color-odd: attr(data-secondary type(*), hsl(from var(--color-accent) h s calc(l + 5)));
+  background-color: var(--color-even);
+  transition: background-color 0.5s;
+}
+.list-item:nth-child(even){
+  background-color: var(--color-even);
+}
+.list-item:nth-child(odd){
+  background-color: var(--color-odd);
+}
+
+.list-item{
+  width: 100%;
+  padding: 5px 10px 5px 10px;
+  color: black;
+  text-align: initial;
+  transition: 
+    color 0.5s,
+    background-color 0.5s;
+}
+
+.list-item:hover{
+  color: black;
+}
+
+
+@media screen and (min-width: 769px) {
+  .columns{
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.column{
+  display: block flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}

@@ -1,0 +1,84 @@
+.zoom-container{
+	anchor-scope: --video-anchor;
+	cursor: none;
+	width: 100%;
+}
+
+.zoom-video-container{
+	overflow: clip;
+	position: relative;
+	border-radius: 10px;
+	anchor-name: --video-anchor;
+}
+
+.zoom-video-container video{
+	max-width: 100%;
+}
+
+.zoom-video{
+	display: block;
+}
+
+.zoom-tooltip-container{
+	display: block;
+	width: 250px;
+	height: 250px;
+	overflow: hidden;
+	position: absolute;
+	position-anchor: --video-anchor;
+	bottom: anchor(top);
+	right: anchor(right);
+	margin-bottom: 5px;
+	box-shadow: 0 22px 60px rgba(2,6,23,.45), inset 0 1px 0 rgba(255,255,255,.14);
+	border-radius: 10px;
+
+	z-index: 10000;
+	position-try-fallbacks: flip-block;
+
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.3s, visibility 0.3s;
+}
+
+.zoom-tooltip-container::before{
+	content: "Press Ctrl + Scroll to adjust zoom";
+	background-color: black;
+	border-radius: 2px;
+	opacity: 0.7;
+	color: white;
+	position: absolute;
+	display: block;
+	top: 5px;
+	left: 5px;
+	color: white;
+	box-shadow: 0 22px 60px rgba(2,6,23,.45), inset 0 1px 0 rgba(255,255,255,.14);
+	z-index: 1000;
+	font-size: 15px;
+	font-weight: 200;
+	transition: opacity 1s 1.5s;
+}
+
+.zoom-tooltip-container[visible = true]::before{
+	opacity: 0;
+}
+
+.zoom-tooltip-container[visible = true]{
+	visibility: visible;
+	opacity: 1;
+}
+
+.zoom-tooltip{
+	max-width: none;
+}
+
+.zoom-cursor{
+	position: absolute;
+	border: solid #121212;
+	border: 2px solid #fff;
+	border-radius: min(10px, 25%);
+	box-shadow: 0 0 10px rgb(12, 12, 12);
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+	visibility: hidden;
+}
+

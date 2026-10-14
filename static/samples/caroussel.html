@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/components/caroussel.css">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .test{
+      background-color: blue;
+    }
+
+    scroll-caroussel{
+      opacity: 1;
+      transition: opacity 1s;
+    }
+    @starting-style{
+    scroll-caroussel{
+        opacity: 0;
+      }
+    }
+
+  </style>
+  <input type="button" value="click">
+  <scroll-caroussel max-show-items = 4 elements-min-width = 250>
+    <video autoplay controls muted loop playsinline>
+        <source src = "assets/video.mp4"/>
+    </video>
+    <img src="assets/img.png">
+    <div class = "test">
+      <img src="assets/img.png" style = "width: 45%; display: inline;">
+      <img src="assets/img.png" style = "width: 45%; display: inline;">
+    </div>
+    <img src="assets/img.png">
+  </scroll-caroussel>
+</body>
+<script>
+  document.querySelector("input").onclick = () => {
+    caroussel = document.querySelector("scroll-caroussel")
+    caroussel.setAttribute("max-show-items", (caroussel.getAttribute("max-show-items") % 4 + 1))
+  }
+</script>
+<script defer src="../js/fontawesome.all.min.js"></script>
+<script defer src="../js/components/caroussel.js"></script>
+</html>

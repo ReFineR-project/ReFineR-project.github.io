@@ -1,1 +1,224 @@
-Bonjour, Hi, this is la page du ReFineR project
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ReFineR">
+  <meta name="keywords" content="ReFineR">
+  <meta name="color-scheme" content="light">
+  <title>ReFineR</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="stylesheet" href="./static/css/components/pages.css">
+  <link rel="stylesheet" href="./static/css/components/caroussel.css">
+  <link rel="stylesheet" href="./static/css/components/compare.css">
+  <link rel="stylesheet" href="./static/css/components/zoom.css">
+  <link rel="stylesheet" href="./static/css/components/day.css">
+  <link rel="stylesheet" href="./static/css/components/misc.css">
+  <link rel="stylesheet" href="./static/css/components/dropdown.css">
+
+  <script defer src="static/js/components/day.js"></script>
+  <script defer src="static/js/components/pages.js"></script>
+  <script defer src="static/js/components/zoom.js"></script>
+  <script defer src="static/js/components/compare.js"></script>
+  <script defer src="static/js/components/caroussel.js"></script>
+  <script defer src="static/js/components/dropdown.js"></script>
+  <script defer src="static/js/components/result_page.js"></script>
+  <script defer src="static/js/components/result_set.js"></script>
+
+  <link rel="icon" href="./static/images/icon_mines.svg">
+</head>
+<body>
+  <day-mode style = "position: absolute; z-index: 10"></day-mode> 
+
+  <header class = "container is-max-desktop">
+    <h1>ReFineR: Single image to dense point cloud registration at pixel level with point splatting</h1>
+    <br>
+    <h2>BMVC 2026</h2>
+    <br>
+    <div id="authors">
+      <a href="https://orcid.org/0009-0000-4315-3881">Insalaco Ugo</a><sup>1, 2</sup>,  
+      <a href="https://scholar.google.com/citations?user=zR1n_4QAAAAJ&hl=fr">Deschaud Jean Emmanuel</a><sup>1</sup>,  
+      <a href="https://linkedin.com/in/pierre-dellenbach-112035b9">Dellenbach Pierre</a><sup>2</sup>
+      <br>
+      <sup>1</sup><a href="https://www.minesparis.psl.eu/en/home/">Mines Paris - PSL</a>
+      <sup>2</sup><a href="https://www.chapsvision.com/fr/">Chapsvision</a>
+    </div>
+    <br>
+    <div id="logos">
+      <a href = "https://www.minesparis.psl.eu/en/home"><img id = "logo-mines"></a>
+      <a href = "https://www.chapsvision.com/fr/"><img id = "logo-chapsvision"></a>
+    </div>
+    <br>
+    <div id="links">
+      <!-- PDF -->
+      <drop-content>
+        <div class = "link-badge">
+          <a target="_blank" rel="noopener noreferrer"  href="../pdf/ReFineR_BMVC_compressed.pdf"><i class="fas fa-file-pdf"></i></a>
+          <a target="_blank" rel="noopener noreferrer"  href="../pdf/ReFineR_BMVC_compressed.pdf">Paper</a>
+          <div class="dropdown-toggle">
+              <i class="fas fa-caret-down"></i>
+          </div>
+        </div>
+        <div class="list-container">
+          <div class="list-item"><a target="_blank" rel="noopener noreferrer"  href="../pdf/ReFineR_BMVC.pdf">Full size</a></div>
+          <div class="list-item"><a target="_blank" rel="noopener noreferrer"  href="../pdf/ReFineR_BMVC_compressed.pdf">Compressed</a></div>
+        </div>
+      </drop-content>
+
+      <!-- ArXiv --> 
+      <div class = "link-badge" style = "color: red;">
+        <a target="_blank" rel="noopener noreferrer"  href="?"><i class="ai ai-arxiv"></i></a>
+        <a target="_blank" rel="noopener noreferrer"  href="?">arXiv</a>
+      </div>
+
+      <!-- Poster -->
+      <!-- <div class = "link-badge" style = "color: red;">
+        <a target="_blank" rel="noopener noreferrer"  href="?"><i class="fas fa-image"></i></a>
+        <a target="_blank" rel="noopener noreferrer"  href="?">Poster</a>
+      </div> -->
+
+      <!-- Data -->
+      <div class = "link-badge" style = "color: red;">
+        <a target="_blank" rel="noopener noreferrer"  href="https://cloud.minesparis.psl.eu/index.php/s/Qr3Urhe0Q9CXrYD"><i class="fas fa-database"></i></a>
+        <a target="_blank" rel="noopener noreferrer"  href="https://cloud.minesparis.psl.eu/index.php/s/Qr3Urhe0Q9CXrYD">Data</a>
+      </div>
+  
+      <!-- Github Link. -->
+      <div class = "link-badge" style = "color: red;">
+        <a target="_blank" rel="noopener noreferrer"  href="?"><i class="fab fa-github"></i></a>
+        <a target="_blank" rel="noopener noreferrer"  href="?">Code</a>
+      </div>
+    </div>
+  </header>
+
+  <section id = "caroussel">
+    <scroll-caroussel max-show-items = 5 elements-min-width = 300 class = "container">
+      <video autoplay controls muted loop playsinline><source src = "static/videos/meetingroom.mp4"/></video>
+      <video autoplay controls muted loop playsinline><source src = "static/videos/meetingroom2.mp4"/></video>
+      <video autoplay controls muted loop playsinline><source src = "static/videos/electro.mp4"/></video>
+      <video autoplay controls muted loop playsinline><source src = "static/videos/facade.mp4"/></video>
+      <video autoplay controls muted loop playsinline><source src = "static/videos/scene_01.mp4"/></video>
+      <video autoplay controls muted loop playsinline><source src = "static/videos/scene_13.mp4"/></video>
+      <video autoplay controls muted loop playsinline><source src = "static/videos/yuan3.mp4"/></video>
+    </scroll-caroussel>
+  </section>
+
+  <main>
+    <section class="container is-max-desktop">
+      <h2>Abstract</h2>
+      <p id = "abstract">
+        Cameras and LiDARs (Light Detection and Ranging) provide complementary observations of the same scene: cameras capture rich appearance cues while LiDAR sensors provide accurate geometric measurements. In this work, we address the problem of fine image-to-point cloud registration from a single image and a roughly estimated camera pose. On robotic platforms, residual reprojection errors of several pixels are commonly observed even after calibration due to temporal desynchronization, mechanical vibrations, or inaccuracies in point cloud reconstruction. Such errors can lead to decimeter-level geometric discrepancies at moderate distances and significantly affect multiple downstream tasks, such as dense cross-modal supervision, texture mapping, and semantic label transfer. To address this challenge, we introduce ReFineR: an offline framework to finely register individual images to pre-reconstructed point clouds. ReFineR builds upon differentiable point splatting rasterization and a smooth Gradient Orientation Measure (GOM) to iteratively refine the camera pose through analysis-by-synthesis optimization. We evaluated the method on a curated dataset of manually calibrated images collected from heterogeneous data sources. Furthermore, we show that an automatic point cloud rescale factor can be estimated prior to optimization, enabling robust refinement across a wide range of scenarios using a single scale-invariant formulation.
+      </p>
+      <img style="width: 100%;" id = "figure">
+    </section>
+
+    <section class = "container">
+      <h2>Intensity registration</h2>
+
+      <pages-radio>
+        <div>
+          <label for="Tanks And Temples">Tanks And Temples</label>
+          <result-set set="TanksAndTemples" root-dir = "./static/"></result-set>
+        </div>
+        <div>
+          <label for="ETH3D">ETH3D</label>
+          <result-set set="ETH3D" root-dir = "./static/"></result-set>
+        </div>
+        <div>
+          <label for="nuScenes">nuScenes</label>
+          <result-set set="nuScenes" root-dir = "./static/"></result-set>
+        </div>
+        <div>
+          <label for="Livox">Livox</label>
+          <result-set set="Livox" root-dir = "./static/"></result-set>
+        </div>
+        <div>
+          <label for="RGBDScenes">RGBDScenes</label>
+          <result-set set="RGBDScenes" root-dir = "./static/"></result-set>
+        </div>
+      </pages-radio>
+
+    </section>
+  </main>
+
+  <section class="container is-max-desktop" id="BibTeX">
+      <h2>BibTeX</h2>
+      <div id = "citation">
+        <i class="fa fa-download fa-lg"></i>
+        <i class="fa fa-copy fa-lg"></i>
+        <pre style = "white-space: pre-wrap;">
+@article{Insalaco2026,
+  title = {ReFineR: Single image to dense point cloud registration at pixel level with point splatting},
+  shorttitle = {ReFineR},
+  author = {Insalaco, Ugo and Deschaud, Jean-Emmanuel and Dellenbach, Pierre},
+  date = {2026},
+  journaltitle = {2026 The British Machine Vision Conference (BMVC)},
+  url = {https://refiner-project.github.io/}
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+    </div>
+  </footer>
+
+  <script>
+    function downloadString(text, fileType, fileName) {
+      var blob = new Blob([text], { type: fileType });
+      var a = document.createElement('a');
+      a.download = fileName;
+      a.href = URL.createObjectURL(blob);
+      a.dataset.downloadurl = [fileType, a.download, a.href].join(':');
+      a.style.display = "none";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function() { URL.revokeObjectURL(a.href); }, 1500);
+    }
+
+    document.querySelector("#citation .fa-copy").onclick = (event) => {
+      const cit = document.querySelector("#citation").innerText
+      navigator.clipboard.writeText(cit)
+      event.target.setAttribute("selected", "")
+      event.target.classList.remove("fa-copy")
+      event.target.classList.add("fa-check")
+      setTimeout(() => {
+        event.target.classList.remove("fa-check")
+        event.target.classList.add("fa-copy")
+        event.target.removeAttribute("selected")
+      }, 3000)
+    }
+
+    document.querySelector("#citation .fa-download").onclick = (event) => {
+      const cit = document.querySelector("#citation").innerText
+      downloadString(cit, "text/plain", "citation.bib")
+      event.target.setAttribute("selected", "")
+      setTimeout(() => {
+        event.target.removeAttribute("selected")
+      }, 2000)
+    }
+  </script>
+
+</body>
+</html>

@@ -31,7 +31,6 @@ class VideoLazy extends HTMLElement{
 		video.style.opacity = 0
 
 		video.addEventListener("loadeddata", () => {
-			console.log("loaded", videoSrc)
 			video.style.opacity = 1
 			thumb.style.opacity = 0
 			thumb.style.display = "none"

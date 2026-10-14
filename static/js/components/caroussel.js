@@ -101,7 +101,6 @@ class Caroussel extends HTMLElement{
     this._itemContainer.setAttribute("caroussel-scrolling", "")
     this._itemContainer.style.transform = "translateX(" + this._currentOffset + "%)" 
 
-    Array.from(this._itemContainer.children).forEach(child => child.style.pointerEvents = "none")
   }
 
   _scroll(touchMoveX){
@@ -116,6 +115,9 @@ class Caroussel extends HTMLElement{
     let idx = -Math.round(offset / this._off)
     this._updateSelect(idx)
     this._itemContainer.style.transform = "translateX(" + offset + "%)" 
+
+    Array.from(this._itemContainer.children).forEach(child => child.style.pointerEvents = "none")
+
   }
 
   _exitScroll(touchMoveX){

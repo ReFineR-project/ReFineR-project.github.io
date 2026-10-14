@@ -92,8 +92,8 @@ class VideoZoom extends HTMLElement{
         this.dispatchEvent(event)
       }
     })
-    zoomedVideo.setAttribute("src", this.dataset.srcVideo)
-    zoomTooltip.setAttribute("src", this.dataset.srcVideo)
+    zoomedVideo.querySelector("source").setAttribute("src", this.dataset.srcVideo)
+    zoomTooltip.querySelector("source").setAttribute("src", this.dataset.srcVideo)
 
     zoomedVideo.addEventListener("wheel", event => {
       if (!triggerScroll){

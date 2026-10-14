@@ -114,13 +114,14 @@
 
   <section id = "caroussel">
     <scroll-caroussel max-show-items = 5 elements-min-width = 300 class = "container">
-      <video autoplay controls muted loop playsinline><source src = "static/videos/meetingroom.mp4"/></video>
-      <video autoplay controls muted loop playsinline><source src = "static/videos/meetingroom2.mp4"/></video>
-      <video autoplay controls muted loop playsinline><source src = "static/videos/electro.mp4"/></video>
-      <video autoplay controls muted loop playsinline><source src = "static/videos/facade.mp4"/></video>
-      <video autoplay controls muted loop playsinline><source src = "static/videos/scene_01.mp4"/></video>
-      <video autoplay controls muted loop playsinline><source src = "static/videos/scene_13.mp4"/></video>
-      <video autoplay controls muted loop playsinline><source src = "static/videos/yuan3.mp4"/></video>
+      <!-- <video autoplay controls muted loop playsinline><source src = "static/videos/meetingroom.mp4"/></video> -->
+      <video-lazy autoplay data-src-thumb = "static/videos/meetingroom.png" data-src-video = "static/videos/meetingroom.mp4"></video-lazy>
+      <video-lazy autoplay data-src-thumb = "static/videos/meetingroom2.png" data-src-video = "static/videos/meetingroom2.mp4"></video-lazy>
+      <video-lazy autoplay data-src-thumb = "static/videos/electro.png" data-src-video = "static/videos/electro.mp4"></video-lazy>
+      <video-lazy autoplay data-src-thumb = "static/videos/facade.png" data-src-video = "static/videos/facade.mp4"></video-lazy>
+      <video-lazy autoplay data-src-thumb = "static/videos/scene_01.png" data-src-video = "static/videos/scene_01.mp4"></video-lazy>
+      <video-lazy autoplay data-src-thumb = "static/videos/scene_13.png" data-src-video = "static/videos/scene_13.mp4"></video-lazy>
+      <video-lazy autoplay data-src-thumb = "static/videos/yuan3.png" data-src-video = "static/videos/yuan3.mp4"></video-lazy>
     </scroll-caroussel>
   </section>
 

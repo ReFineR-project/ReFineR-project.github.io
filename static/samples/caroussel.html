@@ -23,7 +23,8 @@
     }
 
   </style>
-  <scroll-caroussel show-items = 3>
+  <input type="button" value="click">
+  <scroll-caroussel max-show-items = 4 elements-min-width = 250>
     <video autoplay controls muted loop playsinline>
         <source src = "assets/video.mp4"/>
     </video>
@@ -35,7 +36,12 @@
     <img src="assets/img.png">
   </scroll-caroussel>
 </body>
-
+<script>
+  document.querySelector("input").onclick = () => {
+    caroussel = document.querySelector("scroll-caroussel")
+    caroussel.setAttribute("max-show-items", (caroussel.getAttribute("max-show-items") % 4 + 1))
+  }
+</script>
 <script defer src="../js/fontawesome.all.min.js"></script>
 <script defer src="../js/components/caroussel.js"></script>
 </html>

@@ -11,7 +11,6 @@ class VideoZoom extends HTMLElement{
   constructor(){
     super()
     this._scale = 5
-
   }
 
   _updateZoom(layerX, layerY){
@@ -56,22 +55,16 @@ class VideoZoom extends HTMLElement{
         <div class="zoom-cursor"></div>
         <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
           <div class="zoom-cursor"></div>
-          <source type="video/mp4"/> 
+          <source type="video/mp4" src = "${this.dataset.srcVideo}"/> 
         </video>
       </div>
       <div role="tooltip" class = "zoom-tooltip-container">
         <video id = "zoom_tooltip" class="zoom-tooltip" muted loop playsinline>
-        <source type="video/mp4"/>
+        <source type="video/mp4" src = "${this.dataset.srcVideo}"/>
         </video>
       </div>
     </div>
     `
-    this.querySelectorAll("source").forEach(item => item.setAttribute("src", this.dataset.srcVideo))
-    const link = document.createElement("link")
-    link.setAttribute("rel", "stylesheet")
-    const sheet = this.getAttribute("csssheet") ? this.getAttribute("csssheet") : "static/css/components/zoom.css"
-    link.setAttribute("href", sheet)
-    this.appendChild(link)
 
     const zoomedVideo = this.querySelector(".zoom-video")
     const zoomTooltip = this.querySelector(".zoom-tooltip")

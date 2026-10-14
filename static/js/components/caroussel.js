@@ -101,14 +101,10 @@ class Caroussel extends HTMLElement{
     this._itemContainer.setAttribute("caroussel-scrolling", "")
     this._itemContainer.style.transform = "translateX(" + this._currentOffset + "%)" 
 
+    Array.from(this._itemContainer.children).forEach(child => child.style.pointerEvents = "none")
   }
 
   _scroll(touchMoveX){
-    if (this._touchPreviousX && Math.abs(touchMoveX - this._touchPreviousX) > 200){
-      this._touchPreviousX = touchMoveX
-      return
-    }
-
     if (this._animation){
       this._currentOffset = this._animation.overallProgress * (this._targetOffset - this._currentOffset) + this._currentOffset
       this._animation.cancel()
@@ -131,6 +127,25 @@ class Caroussel extends HTMLElement{
     this._currentOffset = offset
     this._itemContainer.removeAttribute("caroussel-scrolling")
     this._selectCallback(idx)
+
+    Array.from(this._itemContainer.children).forEach(child => child.style.pointerEvents = "")
+  }
+
+  _get_nshow(){
+    if (this._min_width < 0){
+      return this._max_nshow
+    }
+    let nshow = Math.floor((this.offsetWidth + this._gap) / (this._min_width + this._gap))
+    nshow = Math.max(nshow, 1)
+    if (this._max_nshow > 0){
+      return Math.min(nshow, this._max_nshow)
+    }
+    return nshow
+  }
+
+  _update_show(nshow){
+    this._nshow = nshow
+    this._itemContainer.style.width = "calc(" + (2 * this._nitems / this._nshow ) + " * (100% + " + this._gap + "px))"
   }
 
   connectedCallback(){
@@ -177,8 +192,19 @@ class Caroussel extends HTMLElement{
     const btnRight = this.querySelector(".caroussel-right")
     const caroussel = this.querySelector(".caroussel-container")
 
-    this._nshow = this.getAttribute("show-items")
-    this._itemContainer.style.width = "calc(" + (2 * this._nitems / this._nshow ) + " * (100% + 10px))"
+    this._gap = 10
+    this._min_width = this.getAttribute("elements-min-width")
+    this._min_width ??= -1
+    this._min_width = parseInt(this._min_width)
+    this._max_nshow = this.getAttribute("max-show-items")
+    this._max_nshow ??= -1
+    this._max_nshow = parseInt(this._max_nshow)
+    if (this._max_nshow < 0 && this._min_width < 0){
+      this._max_nshow = 3
+    }
+    this._nshow = this._get_nshow()
+
+    this._itemContainer.style.width = "calc(" + (2 * this._nitems / this._nshow ) + " * (100% + " + this._gap + "px))"
     this._off = 1 / (2 * this._nitems) * 100
     for (let i = 0; i < this._nitems; i++) {
       let select = document.createElement("div")
@@ -192,7 +218,7 @@ class Caroussel extends HTMLElement{
     }
 
     // Register events
-    caroussel.addEventListener("dragstart", (event) => {
+    this.addEventListener("dragstart", (event) => {
       event.preventDefault();
     })
 
@@ -247,7 +273,29 @@ class Caroussel extends HTMLElement{
       }
       this._exitScroll(event.clientX)
     })
+  
+    const resizeObserver = new ResizeObserver(() => {
+      this._update_show(this._get_nshow())
+    })
+    resizeObserver.observe(this)
 
+    const observer = new MutationObserver((mutationList, observer) => {
+      for (const mutation of mutationList){
+        if (mutation.type === "attributes"){
+          if(mutation.attributeName == "max-show-items"){
+            const value = Math.max(parseInt(mutation.target.getAttribute(mutation.attributeName)), 1)
+            this._max_nshow = value
+          }
+          else if (mutation.attributeName == "elements-min-width"){
+            const value = Math.max(parseInt(mutation.target.getAttribute(mutation.attributeName)), 0)
+            this._min_width = value
+          }
+          this._update_show(this._get_nshow())  
+        }
+      }
+    });
+    const options = {attributes: true, childList: false, subtree: false}
+    observer.observe(this, options);
   }
 }
 

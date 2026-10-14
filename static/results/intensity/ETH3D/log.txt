@@ -1,0 +1,9 @@
+2026-10-13 17:28:31,418 - refiner.data.point_image_dataset - INFO - Found 55 images over 11 scenes
+2026-10-13 17:29:19,452 - refiner.data.point_image_dataset - INFO - Found 55 images over 11 scenes
+2026-10-13 17:30:33,720 - refiner.data.point_image_dataset - INFO - Found 55 images over 11 scenes
+2026-10-13 17:32:04,731 - refiner.data.point_image_dataset - INFO - Found 55 images over 11 scenes
+2026-10-13 17:32:35,901 - refiner.data.point_image_dataset - INFO - Found 55 images over 11 scenes
+2026-10-13 17:34:15,994 - refiner.data.point_image_dataset - INFO - Found 55 images over 11 scenes
+2026-10-13 17:39:50,677 - refiner.data.point_image_dataset - INFO - Found 55 images over 11 scenes
+2026-10-13 17:44:07,602 - refiner.data.point_image_dataset - INFO - Found 55 images over 11 scenes
+2026-10-13 17:48:32,502 - refiner.data.point_image_dataset - INFO - Found 55 images over 11 scenes

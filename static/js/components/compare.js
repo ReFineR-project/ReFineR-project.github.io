@@ -61,13 +61,15 @@ class ImageCompare extends HTMLElement{
     })
 
     compare.addEventListener('touchmove', (e) => {
-        e.preventDefault()
         let touchMoveX = e.changedTouches[0].clientX
-        if (this._touchPreviousX && Math.abs(touchMoveX - this._touchPreviousX) > 50){
+        if (this._touchPreviousX && Math.abs(touchMoveX - this._touchPreviousX) < 5){
+          this._touchPreviousX = touchMoveX
+          return
+        }
+        if (this._touchPreviousX && Math.abs(touchMoveX - this._touchPreviousX) > 100){
             this._touchPreviousX = touchMoveX
             return
-        }
-        
+        }        
         const posX = Math.max(this._baseWidth + touchMoveX - this._touchStartX, 0)
         this._touchPreviousX = touchMoveX
         this._update(posX)

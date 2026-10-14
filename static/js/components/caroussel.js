@@ -39,7 +39,7 @@ class Caroussel extends HTMLElement{
 
   move(amount, direction){
     if (this._animation){
-        this._currentOffset = this._animation.overallProgress * (this._targetOffset - this._currentOffset) + this._currentOffset
+        this._currentOffset = this._animation.currentTime / this.animationTime * (this._targetOffset - this._currentOffset) + this._currentOffset
         this._animation.cancel()
     }
 
@@ -53,7 +53,6 @@ class Caroussel extends HTMLElement{
     }
     this._currentIdx += direction * amount
     this._targetOffset = -this._currentIdx * this._off
-    
     const translate = [
         { transform: "translateX(" + this._currentOffset + "%)" }, 
         { transform: "translateX(" + this._targetOffset + "%)" },
@@ -91,7 +90,7 @@ class Caroussel extends HTMLElement{
 
   _enterScroll(touchX){
     if (this._animation){
-      this._currentOffset = this._animation.overallProgress * (this._targetOffset - this._currentOffset) + this._currentOffset
+      this._currentOffset = this._animation.currentTime / this.animationTime * (this._targetOffset - this._currentOffset) + this._currentOffset
       this._animation.cancel()
       this._animation = null
     }
@@ -100,12 +99,12 @@ class Caroussel extends HTMLElement{
     this._touchPreviousX = touchX
     this._itemContainer.setAttribute("caroussel-scrolling", "")
     this._itemContainer.style.transform = "translateX(" + this._currentOffset + "%)" 
-
+    Array.from(this._itemContainer.children).forEach(child => child.style.pointerEvents = "none")
   }
 
   _scroll(touchMoveX){
     if (this._animation){
-      this._currentOffset = this._animation.overallProgress * (this._targetOffset - this._currentOffset) + this._currentOffset
+      this._currentOffset = this._animation.currentTime / this.animationTime * (this._targetOffset - this._currentOffset) + this._currentOffset
       this._animation.cancel()
       this._animation = null
     }
@@ -115,8 +114,6 @@ class Caroussel extends HTMLElement{
     let idx = -Math.round(offset / this._off)
     this._updateSelect(idx)
     this._itemContainer.style.transform = "translateX(" + offset + "%)" 
-
-    Array.from(this._itemContainer.children).forEach(child => child.style.pointerEvents = "none")
 
   }
 
@@ -129,7 +126,6 @@ class Caroussel extends HTMLElement{
     this._currentOffset = offset
     this._itemContainer.removeAttribute("caroussel-scrolling")
     this._selectCallback(idx)
-
     Array.from(this._itemContainer.children).forEach(child => child.style.pointerEvents = "")
   }
 
@@ -156,14 +152,14 @@ class Caroussel extends HTMLElement{
     const container = document.createElement("div")
     container.classList.add("caroussel-container")
     container.innerHTML = `
-    <div class = "caroussel-left" part = "left">
+    <div class = "caroussel-left">
         <i class="fa fa-caret-left fa-lg caroussel-arrow"></i>
       </div>
       <div class="caroussel-slider">
           <div class="caroussel-items">
           </div>
       </div>
-      <div class = "caroussel-right" part = "right">
+      <div class = "caroussel-right">
         <i class="fa fa-caret-right fa-lg caroussel-arrow"></i>
       </div>
       <div class="caroussel-selects">
@@ -211,7 +207,6 @@ class Caroussel extends HTMLElement{
     for (let i = 0; i < this._nitems; i++) {
       let select = document.createElement("div")
       select.classList.add("caroussel-select")
-      select.setAttribute("part", "select")
       if (i == 0){
           select.setAttribute("caroussel-selected", "")
       }
@@ -232,48 +227,67 @@ class Caroussel extends HTMLElement{
       this._selectCallback(this._currentIdx + 1)
     })
     
+    let touching = false
+    let clicking = false
     this._itemContainer.addEventListener("touchstart", (event) => {
+      if (this.scrolling || clicking){
+        return
+      }
+      touching = true
       this._enterScroll(event.changedTouches[0].clientX)
     })
 
     this._itemContainer.addEventListener("touchmove", (event) => {
+      if (clicking){
+        return
+      }
+      let touchMoveX = event.changedTouches[0].clientX
+      if (this._touchPreviousX && Math.abs(touchMoveX - this._touchPreviousX) < 5){
+        this._touchPreviousX = touchMoveX
+        return
+      }
       event.preventDefault()
-      this._scroll(event.changedTouches[0].clientX)
+      this._scroll(touchMoveX)
     })
 
     this._itemContainer.addEventListener("touchend", (event) => {
-      if (event.changedTouches.length > 1){
+      if (event.changedTouches.length > 1 || clicking){
         return
       }
       this._exitScroll(event.changedTouches[0].clientX)
+      touching = false
     })
 
     this._itemContainer.addEventListener("mousedown", (event) => {
-      if (this.scrolling){
+      if (this.scrolling || touching){
         return
       }
-      this._enterScroll(event.clientX)
-    })
+      clicking = true
+      this._enterScroll(event.x)
+      event.stopPropagation()
+    }, true)
 
     this._itemContainer.addEventListener("mousemove", (event) => {
-      if (!this.scrolling){
+      if (!this.scrolling || touching){
         return
       }
-      this._scroll(event.clientX)
+      this._scroll(event.x)
     })
 
     this._itemContainer.addEventListener("mouseup", (event) => {
-      if (!this.scrolling){
+      if (!this.scrolling || touching){
         return
       }
-      this._exitScroll(event.clientX)
+      clicking = false
+      this._exitScroll(event.x)
     })
 
     this._itemContainer.addEventListener("mouseleave", (event) => {
-      if (!this.scrolling){
+      if (!this.scrolling || touching){
         return
       }
-      this._exitScroll(event.clientX)
+      clicking = false
+      this._exitScroll(event.x)
     })
   
     const resizeObserver = new ResizeObserver(() => {

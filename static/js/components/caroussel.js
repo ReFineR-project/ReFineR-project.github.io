@@ -2,6 +2,7 @@ class Caroussel extends HTMLElement{
   constructor(){
     super()
     this.animationTime = 200
+    this.scrollSpeed = 1.5
     this._options = 
     this._currentIdx = 0
     this._currentOffset = 0
@@ -109,7 +110,7 @@ class Caroussel extends HTMLElement{
       this._animation = null
     }
 
-    let offset = (touchMoveX - this._touchStartX) / this._itemContainer.offsetWidth * 100 + this._currentOffset
+    let offset = this.scrollSpeed * (touchMoveX - this._touchStartX) / this._itemContainer.offsetWidth * 100 + this._currentOffset
     offset = this._clipOffset(offset)
     let idx = -Math.round(offset / this._off)
     this._updateSelect(idx)
@@ -119,7 +120,7 @@ class Caroussel extends HTMLElement{
 
   _exitScroll(touchMoveX){
     this.scrolling = false
-    let offset = (touchMoveX - this._touchStartX) / this._itemContainer.offsetWidth * 100 + this._currentOffset
+    let offset = this.scrollSpeed * (touchMoveX - this._touchStartX) / this._itemContainer.offsetWidth * 100 + this._currentOffset
     offset = this._clipOffset(offset)
 
     let idx = -Math.round(offset / this._off)

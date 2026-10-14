@@ -129,8 +129,10 @@ class ResultPage extends HTMLElement{
     const afterFile = channelDir + results["last"]
 
     const renderVideo = resultDir + "imgs/" + results["renders"][0] + "/output.mp4"
-    const fusedVideo = resultDir + "imgs/fused/output.mp4"
+    const renderThumb = resultDir + "imgs/" + results["renders"][0] + "/0000.png"
 
+    const fusedVideo = resultDir + "imgs/fused/output.mp4"
+    const fusedThumb = resultDir + "init.png"
     this.innerHTML = `
     <div class="columns">
       <div class="column">
@@ -140,7 +142,7 @@ class ResultPage extends HTMLElement{
           data-label-before = "10px error"
           data-label-after = "RGB Image">
         </image-compare>
-        <video-zoom data-src-video = "${fusedVideo}"></video-zoom>
+	      <video-lazy data-src-thumb = "${fusedThumb}" data-src-video = "${fusedVideo}" video-zoom></lazy-video>
       </div>
       <div class="column">
         <image-compare 
@@ -149,7 +151,7 @@ class ResultPage extends HTMLElement{
           data-label-before = "ReFineR"
           data-label-after = "RGB Image">
         </image-compare>
-        <video-zoom data-src-video = "${renderVideo}"></video-zoom>
+	      <video-lazy data-src-thumb = "${renderThumb}" data-src-video = "${renderVideo}" video-zoom></lazy-video>
       </div>
     </div>
     `

@@ -1,0 +1,39 @@
+.lazy-container{
+	display: grid;
+	place-items: center;
+	border-radius: 10px;
+	overflow: clip;
+}
+
+.lazy-container > *{
+	grid-column: 1;
+	grid-row: 1;
+}
+
+.lazy-content{
+	width: 100%;
+	transition: opacity 0.2s;
+}
+
+.lazy-button{
+	height: 40px;
+	width: 40px;
+
+	border: 2px solid #fff;
+	box-shadow: 0 0 10px rgb(12, 12, 12);
+
+	border-radius: 100%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	transition: transform 0.2s;
+}
+
+.lazy-button:hover{
+	transform: Scale(1.2);		}
+
+.lazy-arrow{
+	color: white;
+}

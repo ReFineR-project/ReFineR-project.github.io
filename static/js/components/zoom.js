@@ -55,12 +55,12 @@ class VideoZoom extends HTMLElement{
         <div class="zoom-cursor"></div>
         <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
           <div class="zoom-cursor"></div>
-          <source type="video/mp4" src = "${this.dataset.srcVideo}"/> 
+          <source type="video/mp4"/> 
         </video>
       </div>
       <div role="tooltip" class = "zoom-tooltip-container">
         <video id = "zoom_tooltip" class="zoom-tooltip" muted loop playsinline>
-        <source type="video/mp4" src = "${this.dataset.srcVideo}"/>
+        <source type="video/mp4"/>
         </video>
       </div>
     </div>
@@ -73,6 +73,27 @@ class VideoZoom extends HTMLElement{
     const wheelFactor = 100
     const maxScale = 10
     const minScale = 1
+
+    let videoLoaded = false
+    let tooltipLoaded = false
+
+    zoomedVideo.addEventListener("loadeddata", () => {
+      videoLoaded = true
+      if (tooltipLoaded){
+        const event = new Event("loadeddata")
+        this.dispatchEvent(event)
+      }
+    })
+
+    zoomTooltip.addEventListener("loadeddata", () => {
+      tooltipLoaded = true
+      if (videoLoaded){
+        const event = new Event("loadeddata")
+        this.dispatchEvent(event)
+      }
+    })
+    zoomedVideo.setAttribute("src", this.dataset.srcVideo)
+    zoomTooltip.setAttribute("src", this.dataset.srcVideo)
 
     zoomedVideo.addEventListener("wheel", event => {
       if (!triggerScroll){

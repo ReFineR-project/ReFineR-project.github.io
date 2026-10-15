@@ -7,7 +7,7 @@ class VideoLazy extends HTMLElement{
 		const videoSrc = this.dataset.srcVideo
 		const container = this.querySelector(".lazy-container")
 		const thumb = this.querySelector(".lazy-content")
-		const button = this.querySelector(".lazy-button")
+		const area = this.querySelector(".lazy-click-area")
 		const loader = this.querySelector(".loader")
 		const zoomVideo = this.hasAttribute("video-zoom")
 
@@ -44,7 +44,7 @@ class VideoLazy extends HTMLElement{
 			video.setAttribute("data-src-video", videoSrc)
 		}
 
-		button.style.display = "none"
+		area.style.display = "none"
 	}
 	
 	connectedCallback(){
@@ -53,21 +53,28 @@ class VideoLazy extends HTMLElement{
 			<div class = "lazy-container">
 				<div class = "lazy-slot"></div>
 				<img src = ${thumbSrc} class = "lazy-content">
-				<div class="lazy-button">
-					<i class="fa fa-caret-right fa-lg lazy-arrow"></i>
-				</div>
 				<div class="loader" style = "display: none"></div>
+				<div class = "lazy-click-area">
+					<div class="lazy-button">
+						<i class="fa fa-caret-right fa-lg lazy-arrow"></i>
+					</div>
+				</div>
 			</div>
 		`
 
 		const autoplay = this.hasAttribute("autoplay")
-		const button = this.querySelector(".lazy-button")
+		const area = this.querySelector(".lazy-click-area")
 
 		if (autoplay){
 			this.launchLoading()
 		}
 		else{
-			button.addEventListener("click", () => {
+			area.addEventListener("click", () => {
+				console.log("lazy click")
+				this.launchLoading()
+			})
+			area.addEventListener("touchstart", () => {
+				console.log("lazy touchstart")
 				this.launchLoading()
 			})
 		}

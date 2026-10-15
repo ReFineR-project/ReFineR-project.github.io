@@ -243,11 +243,11 @@ class Caroussel extends HTMLElement{
         return
       }
       let touchMoveX = event.changedTouches[0].clientX
-      if (this._touchPreviousX && Math.abs(touchMoveX - this._touchPreviousX) < 5){
+
+      if (this._touchPreviousX && Math.abs(touchMoveX - this._touchPreviousX) > 100){
         this._touchPreviousX = touchMoveX
         return
-      }
-      event.preventDefault()
+      }  
       this._scroll(touchMoveX)
     })
 
@@ -265,7 +265,6 @@ class Caroussel extends HTMLElement{
       }
       clicking = true
       this._enterScroll(event.x)
-      event.stopPropagation()
     }, true)
 
     this._itemContainer.addEventListener("mousemove", (event) => {

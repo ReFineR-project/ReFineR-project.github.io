@@ -87,3 +87,10 @@
 .compare-arrow{
 	color: white;
 }
+
+.compare-control{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 2;
+}

@@ -11,6 +11,7 @@ class VideoZoom extends HTMLElement{
   constructor(){
     super()
     this._scale = 5
+    this._activeZoom = false
   }
 
   _updateZoom(layerX, layerY){
@@ -52,6 +53,12 @@ class VideoZoom extends HTMLElement{
     this.innerHTML = `
     <div class="zoom-container">
       <div class="zoom-video-container">
+        <div class = "zoom-control">
+          <label>
+            <input type="checkbox" class = "check-regular"/>
+		        Activate zoom
+          </label>
+        </div>
         <div class="zoom-cursor"></div>
         <video aria-describedby="zoom_tooltip" class="zoom-video"  autoplay controls muted loop playsinline>
           <div class="zoom-cursor"></div>
@@ -69,6 +76,8 @@ class VideoZoom extends HTMLElement{
     const zoomedVideo = this.querySelector(".zoom-video")
     const zoomTooltip = this.querySelector(".zoom-tooltip")
     const zoomTooltipContainer = this.querySelector(".zoom-tooltip-container")
+    const zoomContainer = this.querySelector(".zoom-container")
+    const check = this.querySelector("input")
     const zoomCursor = this.querySelector(".zoom-cursor")
     const wheelFactor = 100
     const maxScale = 10
@@ -77,6 +86,20 @@ class VideoZoom extends HTMLElement{
     let videoLoaded = false
     let tooltipLoaded = false
 
+    check.addEventListener("change", (event) => {
+      this._activeZoom = event.target.checked
+      
+      if (this._activeZoom){
+        zoomTooltipContainer.setAttribute("visible", "true")
+        zoomCursor.style.visibility = "visible"
+        zoomContainer.style.cursor = "none"
+      }
+      else{
+        zoomTooltipContainer.setAttribute("visible", "false")
+        zoomCursor.style.visibility = "hidden"
+        zoomContainer.style.cursor = ""
+      }
+    })
     zoomedVideo.addEventListener("loadeddata", () => {
       videoLoaded = true
       if (tooltipLoaded){
@@ -106,18 +129,30 @@ class VideoZoom extends HTMLElement{
       this._updateZoom(event.layerX, event.layerY)
     })
 
+    let touching
+    zoomedVideo.addEventListener("touchstart", event => {
+      if (!this._activeZoom){
+        return
+      }
+      event.preventDefault()
+    })
+
+    zoomedVideo.addEventListener("touchmove", (event) => {
+      if (!this._activeZoom){
+        return
+      }
+      event.preventDefault()
+      const rect = zoomedVideo.getBoundingClientRect()
+      event = event.changedTouches[0]
+      this._updateZoom(event.clientX - rect.left, event.clientY - rect.top)
+    })
+
     zoomedVideo.addEventListener("mousemove", (event) => {
-      this._updateZoom(event.layerX, event.layerY)
-    })
-
-    zoomedVideo.addEventListener("mouseenter", event => {
-      zoomTooltipContainer.setAttribute("visible", "true")
-      zoomCursor.style.visibility = "visible"
-    })
-
-    zoomedVideo.addEventListener("mouseleave", event => {
-      zoomTooltipContainer.setAttribute("visible", "")
-      zoomCursor.style.visibility = "hidden"
+      if (!this._activeZoom){
+        return
+      }
+      const rect = zoomedVideo.getBoundingClientRect()
+      this._updateZoom(event.clientX - rect.left, event.clientY - rect.top)
     })
 
     zoomedVideo.addEventListener("play", () => {

@@ -1,8 +1,8 @@
 .lazy-container{
-	display: grid;
-	place-items: center;
 	border-radius: 10px;
 	overflow: clip;
+	display: grid;
+	place-items: center;
 }
 
 .lazy-container > *{
@@ -18,6 +18,12 @@
 	display: block;
 }
 
+.lazy-click-area{
+	width: 80px;
+	height: 80px;
+	display: grid;
+	place-items: center;
+}
 .lazy-button{
 	height: 40px;
 	width: 40px;
@@ -34,7 +40,7 @@
 	transition: transform 0.2s;
 }
 
-.lazy-button:hover{
+.lazy-click-area:hover > .lazy-button{
 	transform: Scale(1.2);		}
 
 .lazy-arrow{

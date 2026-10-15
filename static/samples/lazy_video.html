@@ -9,6 +9,16 @@
   <link rel="stylesheet" href="../css/components/misc.css">
 </head>
 <body>
+	<div class = "lazy-container">
+		<div class = "lazy-slot"></div>
+		<img src = "assets/before.png" class = "lazy-content">
+		<div class = "lazy-click-area">
+			<div class="lazy-button">
+				<i class="fa fa-caret-right fa-lg lazy-arrow"></i>
+			</div>
+		</div>
+		<div class="loader" style = "display: none"></div>
+	</div>
 	<video-lazy autoplay data-src-thumb = "assets/before.png" data-src-video = "assets/video.mp4" video-zoom></lazy-video>
 </body>
 <script src = "../js/components/zoom.js"></script>

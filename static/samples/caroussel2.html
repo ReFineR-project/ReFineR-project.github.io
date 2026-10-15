@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/components/caroussel.css">
+    <link rel="stylesheet" href="../css/fontawesome.all.min.css">
+
+    <link rel="stylesheet" href="../css/components/lazy.css">
+</head>
+<body>
+    <style>
+        video{
+            max-width: 100%;
+            object-fit: fill;
+        }
+        body{
+            height: 5000px;
+        }
+        .caroussel-slider{
+            overflow: scroll;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        /* .caroussel-items{
+            overflow: scroll;
+        } */
+
+        .caroussel-slider::-webkit-scrollbar {
+            display: none;
+        }
+        
+    </style>
+    <div class="caroussel-container">
+        <div class = "caroussel-left">
+            <i class="fa fa-caret-left fa-lg caroussel-arrow"></i>
+        </div>
+        <div class="caroussel-slider">
+            <div class="caroussel-items">
+                <video-lazy autoplay data-src-thumb = "assets/img.png" data-src-video = "assets/video.mp4"></video-lazy>
+                <video-lazy autoplay data-src-thumb = "assets/img.png" data-src-video = "assets/video.mp4"></video-lazy>
+                <video-lazy autoplay data-src-thumb = "assets/img.png" data-src-video = "assets/video.mp4"></video-lazy>
+                <video-lazy autoplay data-src-thumb = "assets/img.png" data-src-video = "assets/video.mp4"></video-lazy>
+                <video-lazy autoplay data-src-thumb = "assets/img.png" data-src-video = "assets/video.mp4"></video-lazy>
+            </div>
+        </div>
+
+        <div class = "caroussel-right">
+            <i class="fa fa-caret-right fa-lg caroussel-arrow"></i>
+        </div>
+        <div class="caroussel-selects">
+        </div>
+    </div>
+</body>
+<script src = "../js/components/lazy.js"></script>
+<script>
+    const container = document.querySelector(".caroussel-container")
+    const itemContainer = document.querySelector(".caroussel-items")
+    const nitems = itemContainer.children.length
+
+    const btnLeft = document.querySelector(".caroussel-left")
+    const btnRight = document.querySelector(".caroussel-right")
+
+    const slider = document.querySelector(".caroussel-slider")
+
+    for (let i = 0; i < nitems; i++) {
+        itemContainer.appendChild(itemContainer.children[i].cloneNode(true))
+    }
+
+    const nshow = 1
+    const gap = 10
+    const off = 1 / (2 * nitems) * 100
+    console.log("nitems", nitems)
+    itemContainer.style.width = "calc(" + (2 * nitems / nshow ) + " * (100% + " + gap + "px))"
+
+    let current = 0
+    btnRight.addEventListener("click", () => {
+        if (current == nitems){
+            return
+        }
+        current += 1
+        console.log("scroll right")
+        const width = itemContainer.offsetWidth
+        const to = current * off / 100 * width
+        console.log(current, off, width, to)
+        const scroll = slider.scrollTo({"top": 0, "left": to, "behavior": "smooth"})
+        console.log(scroll)
+    })
+
+    btnLeft.addEventListener("click", () => {
+        if (current == 0){
+            return
+        }
+        current -= 1
+        console.log("scroll left")
+        const width = itemContainer.offsetWidth
+        const to = current * off / 100 * width
+        console.log(current, off, width, to)
+        slider.scrollTo({"top": 0, "left": to, "behavior": "smooth"})
+    })
+
+    slider.addEventListener("scroll", (event) => {
+        console.log("scroll event")
+    })
+
+</script>
+</html>

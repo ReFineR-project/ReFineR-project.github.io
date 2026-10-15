@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<style>
+		body{
+			background-color: crimson;
+		}
+		input[type="checkbox"] {
+			-webkit-appearance: none;
+			appearance: none;
+			background-color: #fff0;
+			margin: 0;
+
+			font: inherit;
+			color: currentColor;
+			width: 1.15em;
+			height: 1.15em;
+			border: solid white 2px;
+			border-radius: 0.15em;
+			box-shadow: 5px 0 10px rgb(12, 12, 12);
+			transform: translateY(0.2em);
+		}
+
+		input[type = "checkbox"]:checked{
+			background-color: white;
+		}
+	</style>
+	<label class="form-control">
+		<input type="checkbox" name="checkbox" id = "check" />
+		Checkbox
+	</label>
+
+	<label class="form-control">
+		<input type="checkbox" name="checkbox-checked" checked />
+		Checkbox - checked
+	</label>
+</body>
+	<script>
+		document.querySelector("#check").addEventListener("change", (event) => {
+			console.log("change", event, event.target.checked)
+		})
+	</script>
+
+</html>

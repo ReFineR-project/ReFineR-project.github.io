@@ -13,19 +13,16 @@ class Day extends HTMLElement{
 		flag ? this._internals.states.add("hidden") : this._internals.states.delete("hidden")
   }
 
-
   _updateTheme(){
     const meta = document.querySelector('meta[name=color-scheme]');
-    const root = document.querySelector(":root")
     const newScheme = this.hidden ? "dark" : "light";
-    root.setAttribute("data-scheme", newScheme)
+    const root = document.querySelector(":root")
     root.style.colorScheme = newScheme
-    meta.content = newScheme
   }
 
   _updateAnimation(){
-    const btn = this.querySelector(".day-button")
-    btn.querySelectorAll(".day-ray")
+    const container = this.querySelector(".day-container")
+    container.querySelectorAll(".day-ray")
       .forEach(ray => {
         const theta = parseFloat(ray.style.transform.split(" ").pop(-1).match(/\d*\.?\d+/)[0])
         const ux = Math.cos(theta)
@@ -40,7 +37,7 @@ class Day extends HTMLElement{
         }
       })
 
-    btn.querySelectorAll(".day-circle")
+    container.querySelectorAll(".day-circle")
       .forEach(circle => {
         if (this.hidden){
           circle.style.width = circle.getAttribute("size") + "%"
@@ -54,15 +51,17 @@ class Day extends HTMLElement{
   }
 
   connectedCallback(){
+    this.hidden = window.matchMedia('(prefers-color-scheme: dark)').matches
+
     this.innerHTML = `
     <div class="day-container">
-      <div class="day-button">
-      </div>
+      <input type = "checkbox" class = "day-button" ${this.hidden ? "" : "checked"}>
     </div>
     `
 
     // Initialization
     const btn = this.querySelector(".day-button")
+    const container = this.querySelector(".day-container")
     const nrays = 10
     this._radius = 50 / 1.2
 
@@ -80,7 +79,7 @@ class Day extends HTMLElement{
       const ux = Math.cos(theta)
       const uy = Math.sin(theta)
       ray.style.transform = "translate("+ ux * this._radius + "px, " + uy * this._radius +"px)" + "rotate("+ theta +"rad)"
-      btn.appendChild(ray)
+      container.appendChild(ray)
     }
 
 
@@ -92,29 +91,14 @@ class Day extends HTMLElement{
       elmnt.style.width = 0
       elmnt.style.height = 0
       elmnt.setAttribute("size", circle[0])
-      btn.appendChild(elmnt)
+      container.appendChild(elmnt)
     })
 
-    this.hidden = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+    this._updateTheme()
     this._updateAnimation()
 
-    const meta = document.querySelector('meta[name=color-scheme]')
-    const observer = new MutationObserver((mutationList, observer) => {
-      for (const mutation of mutationList){
-        if (mutation.type === "attributes" && mutation.attributeName == "content"){
-          const value = mutation.target.getAttribute(mutation.attributeName) == "dark"
-          if (value != this.hidden){
-            this.hidden = !this.hidden
-            this._updateAnimation()
-          }
-        }
-      }
-    });
-    const options = {attributes: true, childList: false, subtree: false}
-    observer.observe(meta, options);
-    
-    btn.addEventListener("click", () =>{
-      this.hidden = !this.hidden
+    btn.addEventListener("change", (event) =>{
+      this.hidden = !event.target.checked
       this._updateTheme()
       this._updateAnimation()
     })

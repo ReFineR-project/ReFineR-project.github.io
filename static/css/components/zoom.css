@@ -1,6 +1,5 @@
 .zoom-container{
 	anchor-scope: --video-anchor;
-	cursor: none;
 	width: 100%;
 }
 
@@ -82,3 +81,8 @@
 	visibility: hidden;
 }
 
+.zoom-control{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}

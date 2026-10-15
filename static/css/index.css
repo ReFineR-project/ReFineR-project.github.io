@@ -132,10 +132,12 @@ a{
 }
 
 #logo-chapsvision{
+  content: url("../images/logo_chapsvision.svg");
   content: light-dark(url("../images/logo_chapsvision.svg"), url("../images/logo_chapsvision_dark.svg"));
 }
 
 #logo-mines{
+  content: url("../images/logo_mines.png");
   content: light-dark(url("../images/logo_mines.png"), url("../images/logo_mines_dark.png"));
 }
 
@@ -188,6 +190,7 @@ section{
 }
 
 #figure{
+  content: url("../images/pipeline.svg");
   content: light-dark(url("../images/pipeline.svg"), url("../images/pipeline_dark.svg"));
 }
 

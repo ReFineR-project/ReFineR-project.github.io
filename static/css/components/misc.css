@@ -94,3 +94,23 @@
   50%   {transform:scaleY(-1) rotate(0deg)}
   100%  {transform:scaleY(-1) rotate(-135deg)}
 }
+
+input[type="checkbox"].check-regular {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff0;
+  margin: 0;
+
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: solid white 2px;
+  border-radius: 0.15em;
+  box-shadow: 5px 0 10px rgb(12, 12, 12);
+  transform: translateY(0.2em);
+}
+
+input[type = "checkbox"].check-regular:checked{
+  background-color: white;
+}

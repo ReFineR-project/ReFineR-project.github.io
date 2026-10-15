@@ -56,7 +56,7 @@ class VideoZoom extends HTMLElement{
         <div class = "zoom-control">
           <label>
             <input type="checkbox" class = "check-regular"/>
-		        Activate zoom
+		        Toogle zoom
           </label>
         </div>
         <div class="zoom-cursor"></div>

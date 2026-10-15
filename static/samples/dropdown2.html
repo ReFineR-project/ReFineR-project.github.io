@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .container{
+            background-color: brown;
+            position: relative;
+            width: fit-content;
+            height: fit-content;
+        }
+        .top{
+            position: relative;
+            z-index: 2;
+            background-color: yellow;
+            border-radius: 10px;
+            overflow: clip;
+            width: fit-content;
+        }
+
+        .clip{
+            -webkit-clip-path: rect(50% 100% calc(10000 * 1px) 0);
+            clip-path: rect(50% 100% calc(infinity * 1px) 0);
+            -webkit-clip-path: rect(50% 100% calc(infinity * 1px) 0);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+
+        }
+
+        .bottom{
+            position: absolute;
+            height: 100%;
+            /* background-color: green; */
+            top: 0;
+            z-index: 1;
+            width: 100%;
+            writing-mode: vertical-lr;
+
+        }
+
+        .bottom2{
+            writing-mode: initial;
+            position: absolute;
+            height: auto;
+            top: 0;
+            width: 100%;
+            padding-top: 100%;
+            background-color: blue;
+            transition: transform 1s;
+        }
+
+        .bottom2[closed]{
+            transform: translateY(-100%);
+        }
+    </style>
+    <div style = "display: flex;">
+        <input type="button" value="click" id = "click">
+        <div class="container">
+            <div class="top">
+                Bonjour
+            </div>
+            <div class="clip">
+                <div class="bottom">
+                    <div class="bottom2">
+                        Coucou 
+                        <br>
+                        ça va ?
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    const button = document.querySelector("#click")
+    const bottom = document.querySelector(".bottom") 
+    const bottom2 = document.querySelector(".bottom2") 
+    button.addEventListener("click", () => {
+        if (bottom.hasAttribute("closed")){
+            bottom.removeAttribute("closed")
+            bottom2.removeAttribute("closed")
+        }
+        else {
+            bottom.setAttribute("closed", "")
+            bottom2.setAttribute("closed", "")
+        }
+    })
+</script>
+</html>

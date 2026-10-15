@@ -33,33 +33,40 @@ class Pages extends HTMLElement{
 			pages.push(page)
 		})
 
-    this.innerHTML = `
-    	<div class="page-container">
-				<div class="page-labels">
+		this.innerHTML = `
+			<div class="page-container">
+					<div class="page-labels">
+					</div>
+					<div class="page-content">
+					</div>
 				</div>
-				<div class="page-content">
-				</div>
-			</div>
-    `
+		`
 
 		this.querySelector(":scope > .page-container > .page-labels").append(...labels)
-		this.querySelector(":scope > .page-container > .page-content").append(...pages)
+		const pageContent = this.querySelector(":scope > .page-container > .page-content")
 	
 		Array.from(inputs).forEach(input => {
 			if (input.checked){
 				let found = pages.filter(page => page.getAttribute("ref") == input.value)[0]
-				found.setAttribute("selected", "true")
+				found.setAttribute("selected", "")
+				pageContent.replaceChildren(found)
 			}
 			input.addEventListener("click", () => {
 				let found = pages.filter(page => page.getAttribute("ref") == input.value)[0]
-				found.setAttribute("selected", "true")
+				found.setAttribute("selected", "")
+				Array.from(pageContent.children).filter(
+					page => page.getAttribute("ref") != input.value)
+					.forEach(page => {
+					page.removeAttribute("selected")
+				})
+				if(Array.from(pageContent.children)
+					.filter(page => page.getAttribute("ref") == found.getAttribute("ref")).length == 0){
+					pageContent.appendChild(found)
+				}
 
-				pages
-					.filter(page => ((page.getAttribute("ref") != input.value)))
-					.forEach(page =>  {
-							page.setAttribute("selected", "")
-					})
 			})
+
+		console.log(pages)
     })
   }
 }

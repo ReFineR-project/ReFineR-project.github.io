@@ -38,7 +38,7 @@ class ImageCompare extends HTMLElement{
       <div class = "compare-control">
         <label>
           <input type="checkbox" class = "check-regular"/>
-          Activate flicker
+          Toogle flicker
         </label>
       </div>
 			<div class="compare-before">

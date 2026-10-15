@@ -149,7 +149,7 @@ a{
 }
 
 #caroussel{
-  padding: 1.5rem;
+  padding: 1.5rem 0.5rem;
   background-color: var(--color-secondary);
   color: var(--color-text);
   transition:

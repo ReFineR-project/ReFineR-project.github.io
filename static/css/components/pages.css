@@ -78,14 +78,14 @@
 		display .5s allow-discrete;
 }
 
-.page[selected = true]{
+.page[selected]{
 	opacity: 100%;
 	visibility: visible;
 	display: block;
 }
 
 @starting-style {
-	.page[selected = true] {
+	.page[selected] {
 		opacity: 0%;
 		visibility: hidden;
 		display: block ;

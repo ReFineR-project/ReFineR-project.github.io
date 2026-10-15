@@ -37,18 +37,25 @@ class DropContent extends HTMLElement{
 
   connectedCallback(){
 		const children = this.children
-		const container = document.createElement("div")
-		container.classList.add("dropdown-container")
+		const top = children[0].cloneNode(true)
+		top.classList.add("dropdown-top")
 
-		children[0].classList.add("dropdown-top")
-		children[1].classList.add("dropdown-bottom")
-		const clip = document.createElement("div")
-		clip.classList.add("dropdown-clip")
-		container.appendChild(children[0])
-		clip.appendChild(children[0])
-		container.appendChild(clip)
+		const bottom = children[1].cloneNode(true)
+		bottom.classList.add("dropdown-bottom")
+		this.innerHTML = `
+		<div class = "dropdown-container">
+			<div class = "dropdown-clip">
+				<div class = "dropdown-padding">
+				</div>
+			</div>
+		</div>
+		`
 
-		this.replaceChildren(container)
+		const container = this.querySelector(".dropdown-container")
+		const padding = this.querySelector(".dropdown-padding")
+	
+		container.appendChild(top)
+		padding.appendChild(bottom)
 
 		const toggles = this.querySelectorAll(".dropdown-toggle")
 		Array.from(toggles).forEach(toggle => {

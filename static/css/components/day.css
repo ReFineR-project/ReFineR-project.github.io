@@ -67,4 +67,6 @@ input[type="checkbox"].day-button:hover{
 	transition: 
 		width 0.5s,
 		height 0.5s;
+
+	pointer-events: none;
 }

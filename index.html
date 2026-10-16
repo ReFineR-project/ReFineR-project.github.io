@@ -109,6 +109,12 @@
         <a target="_blank" rel="noopener noreferrer"  href="?"><i class="fab fa-github"></i></a>
         <a target="_blank" rel="noopener noreferrer"  href="?">Code</a>
       </div>
+
+            <!-- Github Link. -->
+      <div class = "link-badge">
+        <a target="_blank" rel="noopener noreferrer"  href="https://github.com/ReFineR-project/ReFineR-project.github.io"><i class="fab fa-github"></i></a>
+        <a target="_blank" rel="noopener noreferrer"  href="https://github.com/ReFineR-project/ReFineR-project.github.io">This.page</a>
+      </div>
     </div>
   </header>
 
@@ -137,26 +143,62 @@
     <section class = "container">
       <h2>Intensity registration</h2>
 
-      <pages-radio>
+      <pages-radio name = "intensity">
         <div>
-          <label for="Tanks And Temples">Tanks And Temples</label>
-          <result-set set="TanksAndTemples" root-dir = "./static/"></result-set>
+          <label for="Tanks And Temples intensity">Tanks And Temples</label>
+          <result-set set="TanksAndTemples" root-dir = "./static/" modality = "intensity"></result-set>
         </div>
         <div>
-          <label for="ETH3D">ETH3D</label>
-          <result-set set="ETH3D" root-dir = "./static/"></result-set>
+          <label for="ETH3D intensity">ETH3D</label>
+          <result-set set="ETH3D" root-dir = "./static/" modality = "intensity"></result-set>
         </div>
         <div>
-          <label for="nuScenes">nuScenes</label>
-          <result-set set="nuScenes" root-dir = "./static/"></result-set>
+          <label for="nuScenes intensity">nuScenes</label>
+          <result-set set="nuScenes" root-dir = "./static/" modality = "intensity"></result-set>
+        </div>
+        <div>
+          <label for="Livox intensity">Livox</label>
+          <result-set set="Livox" root-dir = "./static/" modality = "intensity"></result-set>
+        </div>
+        <div>
+          <label for="RGBDScenes intensity">RGBDScenes</label>
+          <result-set set="RGBDScenes" root-dir = "./static/" modality = "intensity"></result-set>
+        </div>
+      </pages-radio>
+
+    </section>
+
+    <section class = "container">
+      <h2>Normals registration</h2>
+
+      <pages-radio name = "normals">
+        <div>
+          <label for="Tanks And Temples normals">Tanks And Temples</label>
+          <result-set set="TanksAndTemples" root-dir = "./static/" modality = "normals"></result-set>
+        </div>
+
+        <div>
+          <label for="ETH3D normals">ETH3D</label>
+          <result-set set="ETH3D" root-dir = "./static/" modality = "normals"></result-set>
+        </div>
+
+        <div>
+          <label for="CARLA normals">CARLA</label>
+          <result-set set="Carla" root-dir = "./static/" modality = "normals"></result-set>
+        </div>
+  
+        <div>
+          <label for="nuScenes normals">nuScenes</label>
+          <result-set set="nuScenes" root-dir = "./static/" modality = "normals"></result-set>
         </div>
         <div>
           <label for="Livox">Livox</label>
-          <result-set set="Livox" root-dir = "./static/"></result-set>
+          <result-set set="Livox" root-dir = "./static/" modality = "normals"></result-set>
         </div>
+        
         <div>
           <label for="RGBDScenes">RGBDScenes</label>
-          <result-set set="RGBDScenes" root-dir = "./static/"></result-set>
+          <result-set set="RGBDScenes" root-dir = "./static/" modality = "normals"></result-set>
         </div>
       </pages-radio>
 

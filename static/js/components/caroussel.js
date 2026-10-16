@@ -7,6 +7,7 @@ class Caroussel extends HTMLElement{
     this._currentIdx = 0
     this._currentOffset = 0
     this._targetOffset = 0
+    this._minScrollSpeed = 30
     this._nitems = null
     this._animation = null
     this._touchStartX = null
@@ -48,7 +49,7 @@ class Caroussel extends HTMLElement{
         this._currentOffset += this._nitems * this._off
         this._currentIdx -= this._nitems
     }
-    else if ((direction < 0) && (this._currentIdx <= 0)){
+    else if ((direction < 0) && (this._currentIdx < 0)){
         this._currentOffset -= this._nitems * this._off
         this._currentIdx += this._nitems
     }
@@ -100,7 +101,6 @@ class Caroussel extends HTMLElement{
     this._touchPreviousX = touchX
     this._itemContainer.setAttribute("caroussel-scrolling", "")
     this._itemContainer.style.transform = "translateX(" + this._currentOffset + "%)" 
-    Array.from(this._itemContainer.children).forEach(child => child.style.pointerEvents = "none")
   }
 
   _scroll(touchMoveX){
@@ -115,6 +115,7 @@ class Caroussel extends HTMLElement{
     let idx = -Math.round(offset / this._off)
     this._updateSelect(idx)
     this._itemContainer.style.transform = "translateX(" + offset + "%)" 
+    Array.from(this._itemContainer.children).forEach(child => child.style.pointerEvents = "none")
 
   }
 
@@ -124,6 +125,15 @@ class Caroussel extends HTMLElement{
     offset = this._clipOffset(offset)
 
     let idx = -Math.round(offset / this._off)
+
+    if (idx == this._currentIdx){
+      const speed = Math.abs(touchMoveX - this._touchPreviousX)
+      const dir = -Math.sign(touchMoveX - this._touchPreviousX)
+      if (speed > this._minScrollSpeed){
+        idx += dir
+
+      }
+    }
     this._currentOffset = offset
     this._itemContainer.removeAttribute("caroussel-scrolling")
     this._selectCallback(idx)
@@ -170,7 +180,6 @@ class Caroussel extends HTMLElement{
     const children = this.children
     const containerItems = container.querySelector(".caroussel-items")
     this._nitems = children.length
-    
     for (let i = 0; i < this._nitems; i++) {
       this.appendChild(children[i].cloneNode(true))
     }
@@ -252,7 +261,7 @@ class Caroussel extends HTMLElement{
     })
 
     this._itemContainer.addEventListener("touchend", (event) => {
-      if (event.changedTouches.length > 1 || clicking){
+      if (event.changedTouches.length > 1 || clicking || !this.scrolling){
         return
       }
       this._exitScroll(event.changedTouches[0].clientX)
@@ -265,7 +274,7 @@ class Caroussel extends HTMLElement{
       }
       clicking = true
       this._enterScroll(event.x)
-    }, true)
+    })
 
     this._itemContainer.addEventListener("mousemove", (event) => {
       if (!this.scrolling || touching){
@@ -275,7 +284,7 @@ class Caroussel extends HTMLElement{
     })
 
     this._itemContainer.addEventListener("mouseup", (event) => {
-      if (!this.scrolling || touching){
+      if (!this.scrolling || touching || !this.scrolling){
         return
       }
       clicking = false
@@ -289,7 +298,7 @@ class Caroussel extends HTMLElement{
       clicking = false
       this._exitScroll(event.x)
     })
-  
+
     const resizeObserver = new ResizeObserver(() => {
       this._update_show(this._get_nshow())
     })

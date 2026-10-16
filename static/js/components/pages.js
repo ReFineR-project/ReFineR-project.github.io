@@ -35,11 +35,11 @@ class Pages extends HTMLElement{
 
 		this.innerHTML = `
 			<div class="page-container">
-					<div class="page-labels">
-					</div>
-					<div class="page-content">
-					</div>
+				<div class="page-labels">
 				</div>
+				<div class="page-content">
+				</div>
+			</div>
 		`
 
 		this.querySelector(":scope > .page-container > .page-labels").append(...labels)
@@ -65,8 +65,6 @@ class Pages extends HTMLElement{
 				}
 
 			})
-
-		console.log(pages)
     })
   }
 }

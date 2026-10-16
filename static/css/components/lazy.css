@@ -1,6 +1,5 @@
 .lazy-container{
-	border-radius: 10px;
-	overflow: clip;
+	position: relative;
 	display: grid;
 	place-items: center;
 }
@@ -11,6 +10,7 @@
 }
 
 .lazy-content{
+	border-radius: 10px;
 	width: 100%;
 	transition: 
 		opacity 0.2s,
@@ -19,8 +19,13 @@
 }
 
 .lazy-click-area{
-	width: 80px;
-	height: 80px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	/* width: 80px;
+	height: 80px; */
+	z-index: 10;
 	display: grid;
 	place-items: center;
 }

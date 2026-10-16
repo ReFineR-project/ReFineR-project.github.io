@@ -70,11 +70,9 @@ class VideoLazy extends HTMLElement{
 		}
 		else{
 			area.addEventListener("click", () => {
-				console.log("lazy click")
 				this.launchLoading()
 			})
 			area.addEventListener("touchstart", () => {
-				console.log("lazy touchstart")
 				this.launchLoading()
 			})
 		}

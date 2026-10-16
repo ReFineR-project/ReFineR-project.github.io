@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/components/caroussel.css">
+  <link rel="stylesheet" href="../css/components/lazy.css">
+  <link rel="stylesheet" href="../css/components/zoom.css">
+  <link rel="stylesheet" href="../css/components/compare.css">
+  <link rel="stylesheet" href="../css/components/misc.css">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .flex{
+        display: flex;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .flex-item{
+        flex: 1 1 0;
+        width: 100%;
+    }
+
+    #left{
+        background-color: aqua;
+    }
+
+  </style>
+  
+    <div class="flex">
+        <div class="flex-item" id = "left">
+            <img src="../results/normals/TanksAndTemples/Church/332/imgs/nx/0000.png" alt="" style = "width: 100%;">
+        </div>
+        <div class="caroussel-container flex-item">
+            <div class="caroussel-left">
+                <i class="fa fa-caret-left fa-lg caroussel-arrow">
+                </i>
+            </div>
+            <div class="caroussel-slider">
+                <div class="caroussel-items" style="width: calc(600% + 60px);">
+                    <div class="caroussel-item">
+                        <img src="../results/normals/TanksAndTemples/Church/332/imgs/nx/0000.png" class="lazy-content">
+                    </div>
+                    <div class="caroussel-item">
+                                <img src="../results/normals/TanksAndTemples/Church/332/imgs/ny/0000.png" class="lazy-content">
+
+                    </div>
+                    <div class="caroussel-item">
+                                <img src="../results/normals/TanksAndTemples/Church/332/imgs/nz/0000.png" class="lazy-content">
+
+
+                    </div>
+                    <div class="caroussel-item">
+                                <img src="../results/normals/TanksAndTemples/Church/332/imgs/nx/0000.png" class="lazy-content">
+
+                    </div>
+                    <div class="caroussel-item">
+                                <img src="../results/normals/TanksAndTemples/Church/332/imgs/ny/0000.png" class="lazy-content">
+
+
+                    </div>
+                    <div class="caroussel-item">
+                            <div class="lazy-container">
+                                <img src="../results/normals/TanksAndTemples/Church/332/imgs/nz/0000.png" class="lazy-content">
+                                <div class="lazy-click-area">
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="caroussel-right">
+                <i class="fa fa-caret-right fa-lg caroussel-arrow"></i>
+            </div>
+            <div class="caroussel-selects">
+                <div class="caroussel-select" caroussel-selected=""></div>
+                <div class="caroussel-select"></div>
+                <div class="caroussel-select"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script defer src="../js/fontawesome.all.min.js"></script>
+<script defer src="../js/components/caroussel.js"></script>
+</html>

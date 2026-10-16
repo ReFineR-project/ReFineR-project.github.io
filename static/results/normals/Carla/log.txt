@@ -1,0 +1,1 @@
+2026-10-16 12:55:10,879 - refiner.data.point_image_dataset - INFO - Found 50 images over 5 scenes

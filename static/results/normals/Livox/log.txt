@@ -1,0 +1,2 @@
+2026-10-16 13:33:34,720 - refiner.data.point_image_dataset - INFO - Found 4 images over 4 scenes
+2026-10-16 13:34:37,057 - refiner.data.point_image_dataset - INFO - Found 4 images over 4 scenes

@@ -5,23 +5,22 @@ class ResultSet extends HTMLElement{
 
   connectedCallback(){
     const set = this.getAttribute("set")
-    const results = RESULT_LINKS[set]
+    let modality = this.getAttribute("modality")
+    modality ??= "intensity"
+    const results = RESULT_LINKS[modality][set]
     const rootDir = this.getAttribute("root-dir")
 
-
-
-    let radioName = this.getAttribute("name")
-    radioName = radioName ? radioName : set
+    const radioName = set + "-" + modality
 
     const labels = []
     const content = []
     const pages = []
     results.forEach((res, idx) => {
-      const resultDir = rootDir + "results/intensity/" + set + "/" + res["scene"] + "/" + res["item"] + "/"
+      const resultDir = rootDir + "results/"+ modality + "/" + set + "/" + res["scene"] + "/" + res["item"] + "/"
       const channelDir = resultDir + "imgs/" + res["compare"] + "/"
       const rgbFile =  channelDir + "target.png"
 
-      const name = radioName + "img" + idx.toString()
+      const name = radioName + "-" + idx.toString()
       const checked = idx == 0 ? "checked" : ""
       pages.push(`
         <div>
@@ -29,7 +28,7 @@ class ResultSet extends HTMLElement{
             <img src="${rgbFile}">
           </label>
           <div>
-            <result-page set = "${set}" root-dir = "${rootDir}" img-idx="${idx}"></result-page>  
+            <result-page set = "${set}" root-dir = "${rootDir}" img-idx="${idx}" modality="${modality}"></result-page>  
           </div>
         </div>
       `)

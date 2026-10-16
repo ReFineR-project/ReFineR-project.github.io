@@ -135,6 +135,7 @@ class VideoZoom extends HTMLElement{
         return
       }
       event.preventDefault()
+      event.stopPropagation()
     })
 
     zoomedVideo.addEventListener("touchmove", (event) => {
@@ -142,6 +143,7 @@ class VideoZoom extends HTMLElement{
         return
       }
       event.preventDefault()
+      event.stopPropagation()
       const rect = zoomedVideo.getBoundingClientRect()
       event = event.changedTouches[0]
       this._updateZoom(event.clientX - rect.left, event.clientY - rect.top)

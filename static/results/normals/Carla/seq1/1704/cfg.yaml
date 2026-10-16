@@ -1,0 +1,129 @@
+camera:
+  clip_plane: !!python/tuple
+  - 0.1
+  - 100.0
+  dist_grad: false
+  extr_grad: true
+  intr_grad: false
+  intr_model: !!python/object/apply:refiner.camera.backends.MODEL
+  - 2
+  ndc_ranges: !!python/tuple
+  - -1
+  - 1
+  - 1
+  - -1
+  - 0
+  - 1
+  viewport: !!python/tuple
+  - 0
+  - -1
+  - -1
+  - 0
+  - 0
+  - 1
+data:
+  absolute_normals: true
+  equalize_intensity: false
+  img_center_crop: !!python/tuple
+  - 0
+  - 0
+  img_channels:
+  - g
+  img_min_size: 1024
+  path: /home/ugoinsalaco/Documents/Datasets/Common
+  pc_channels:
+  - x
+  - z
+  - ny
+  - nx
+  - nz
+  - y
+  pc_dynamic_scale: true
+  pc_lod_filter: -1.0
+  pc_normalize_intensity: true
+  pc_subsample_factor: 1.0
+  pc_view_filter: !!python/tuple
+  - 20.0
+  - 0.1
+  - 100.0
+  pert_init:
+    c: 0.0
+    f: 0.0
+    p: 10.0
+    r: 0.0
+    t: 0.0
+  precomp_path: ''
+  scene: ''
+  seed: 92
+  set: Carla
+gs:
+  mip_size: 5.0
+  opacity: 0.5
+  point_size: 0.5
+logger:
+  log_freq: 1
+  log_to_console: true
+  log_to_file: true
+loss:
+  grad:
+    channels:
+    - comp: !!python/tuple
+      - nx
+      - g
+      weight: 1
+    - comp: !!python/tuple
+      - ny
+      - g
+      weight: 1
+    - comp: !!python/tuple
+      - nz
+      - g
+      weight: 1
+    weight: 1.0
+  hogs: null
+  ma: null
+  photo: null
+matchAnything_init: false
+matchAnything_init_gs: true
+optim:
+  lr: 0.0002
+  niter: !!python/tuple
+  - 2.0e-05
+  - 50
+  - 500
+out_path: !!python/object/apply:pathlib.PosixPath
+- output
+- main
+- Carla
+- seq1
+- '1704'
+renderer:
+  render_channels:
+  - nx
+  - nz
+  - ny
+  render_type: !!python/object/apply:refiner.utils.config_types.RenderType
+  - 0
+saver_file:
+  modules: !!python/tuple
+  - imgs
+  - fused
+  - fused_iter
+  - imgs_init
+  - video
+  path: output/main/Carla/seq1/1704
+  pc_channel: nx
+saver_rerun:
+  modules: !!python/tuple
+  - imgs
+  - cams
+  - pc
+  - fused
+  - fused_iter
+  - match_pairs
+  - imgs_init
+  - dist_mask
+  path: output/main/Carla/seq1/1704
+  pc_channel: nx
+  spawn: true
+  view_coordinates: RIGHT_HAND_Z_UP

@@ -1,0 +1,138 @@
+2026-10-16 10:38:55,386 - __main__ - INFO - Registering image '332' from scene TanksAndTemples/Church
+2026-10-16 10:38:58,383 - refiner.data.common - INFO - Loaded point cloud /home/ugoinsalaco/Documents/Datasets/Common/TanksAndTemples/Church/pc.ply
+2026-10-16 10:39:01,997 - refiner.data.common - INFO - Loaded image /home/ugoinsalaco/Documents/Datasets/Common/TanksAndTemples/Church/images/332.png
+2026-10-16 10:39:02,096 - refiner.data.point_image_dataset - INFO - View filtered 28980287 points
+2026-10-16 10:39:02,221 - refiner.data.point_image_dataset - INFO - LoD filtered 0 points
+2026-10-16 10:39:02,668 - refiner.data.point_image_dataset - INFO - Remaining 38673730 points
+2026-10-16 10:39:05,418 - refiner.data.point_image_dataset - INFO - Computed rescale factor: 19.16
+2026-10-16 10:39:05,425 - __main__ - INFO - Epoch 0
+2026-10-16 10:39:05,426 - __main__ - INFO - Found target camera, running in experiment mode
+2026-10-16 10:39:18,388 - __main__ - INFO - Initial errors: pix: 9.76px, rot: 0.60deg / 0.01052rad, transl: 5.97cm, transl_rescaled: 0.00312
+2026-10-16 10:40:10,689 - __main__ - INFO - Registering image '332' from scene TanksAndTemples/Church
+2026-10-16 10:40:12,033 - refiner.data.common - INFO - Loaded point cloud /home/ugoinsalaco/Documents/Datasets/Common/TanksAndTemples/Church/pc.ply
+2026-10-16 10:40:13,792 - refiner.data.common - INFO - Loaded image /home/ugoinsalaco/Documents/Datasets/Common/TanksAndTemples/Church/images/332.png
+2026-10-16 10:40:13,829 - refiner.data.point_image_dataset - INFO - View filtered 5795533 points
+2026-10-16 10:40:13,861 - refiner.data.point_image_dataset - INFO - LoD filtered 0 points
+2026-10-16 10:40:13,966 - refiner.data.point_image_dataset - INFO - Remaining 7735270 points
+2026-10-16 10:40:14,456 - refiner.data.point_image_dataset - INFO - Computed rescale factor: 19.16
+2026-10-16 10:40:14,457 - __main__ - INFO - Epoch 0
+2026-10-16 10:40:14,458 - __main__ - INFO - Found target camera, running in experiment mode
+2026-10-16 10:40:15,366 - __main__ - INFO - Initial errors: pix: 9.76px, rot: 0.60deg / 0.01052rad, transl: 5.97cm, transl_rescaled: 0.00312
+2026-10-16 10:40:26,379 - __main__ - INFO - it: 1, loss: -0.817280, render time: 0.071312, loss time: 0.020880, backward time: 0.255449
+2026-10-16 10:40:28,923 - __main__ - INFO - it: 2, loss: -0.820676, render time: 0.075225, loss time: 0.012055, backward time: 0.006938
+2026-10-16 10:40:31,289 - __main__ - INFO - it: 3, loss: -0.824839, render time: 0.076178, loss time: 0.043523, backward time: 0.011549
+2026-10-16 10:40:33,632 - __main__ - INFO - it: 4, loss: -0.830058, render time: 0.078505, loss time: 0.011468, backward time: 0.004208
+2026-10-16 10:40:35,961 - __main__ - INFO - it: 5, loss: -0.834518, render time: 0.075264, loss time: 0.010273, backward time: 0.003888
+2026-10-16 10:40:38,391 - __main__ - INFO - it: 6, loss: -0.835700, render time: 0.075750, loss time: 0.010200, backward time: 0.003885
+2026-10-16 10:40:40,969 - __main__ - INFO - it: 7, loss: -0.835391, render time: 0.076182, loss time: 0.010210, backward time: 0.004214
+2026-10-16 10:40:43,373 - __main__ - INFO - it: 8, loss: -0.835667, render time: 0.075407, loss time: 0.010458, backward time: 0.004252
+2026-10-16 10:40:45,908 - __main__ - INFO - it: 9, loss: -0.836336, render time: 0.075274, loss time: 0.010229, backward time: 0.005782
+2026-10-16 10:40:49,464 - __main__ - INFO - it: 10, loss: -0.837451, render time: 0.173209, loss time: 0.025372, backward time: 0.006225
+2026-10-16 10:40:52,785 - __main__ - INFO - it: 11, loss: -0.838589, render time: 0.140362, loss time: 0.013778, backward time: 0.020580
+2026-10-16 10:40:56,066 - __main__ - INFO - it: 12, loss: -0.839636, render time: 0.060553, loss time: 0.008895, backward time: 0.005178
+2026-10-16 10:40:59,019 - __main__ - INFO - it: 13, loss: -0.840665, render time: 0.076297, loss time: 0.025517, backward time: 0.005973
+2026-10-16 10:41:01,957 - __main__ - INFO - it: 14, loss: -0.841794, render time: 0.072958, loss time: 0.010519, backward time: 0.005234
+2026-10-16 10:41:04,957 - __main__ - INFO - it: 15, loss: -0.843026, render time: 0.083451, loss time: 0.019439, backward time: 0.008590
+2026-10-16 10:41:07,653 - __main__ - INFO - it: 16, loss: -0.844636, render time: 0.076833, loss time: 0.010825, backward time: 0.006591
+2026-10-16 10:41:10,256 - __main__ - INFO - it: 17, loss: -0.846075, render time: 0.076631, loss time: 0.010142, backward time: 0.006616
+2026-10-16 10:41:13,151 - __main__ - INFO - it: 18, loss: -0.847317, render time: 0.076049, loss time: 0.010667, backward time: 0.005381
+2026-10-16 10:41:15,949 - __main__ - INFO - it: 19, loss: -0.847974, render time: 0.077117, loss time: 0.010699, backward time: 0.005569
+2026-10-16 10:41:18,857 - __main__ - INFO - it: 20, loss: -0.848121, render time: 0.078886, loss time: 0.011759, backward time: 0.004461
+2026-10-16 10:41:21,646 - __main__ - INFO - it: 21, loss: -0.848239, render time: 0.076517, loss time: 0.011108, backward time: 0.007779
+2026-10-16 10:41:24,883 - __main__ - INFO - it: 22, loss: -0.848761, render time: 0.075893, loss time: 0.011115, backward time: 0.006381
+2026-10-16 10:41:27,707 - __main__ - INFO - it: 23, loss: -0.849808, render time: 0.072544, loss time: 0.010621, backward time: 0.004931
+2026-10-16 10:41:30,707 - __main__ - INFO - it: 24, loss: -0.851211, render time: 0.076827, loss time: 0.011198, backward time: 0.007099
+2026-10-16 10:41:33,497 - __main__ - INFO - it: 25, loss: -0.852396, render time: 0.076442, loss time: 0.010341, backward time: 0.004794
+2026-10-16 10:41:36,414 - __main__ - INFO - it: 26, loss: -0.853248, render time: 0.077322, loss time: 0.010399, backward time: 0.005807
+2026-10-16 10:41:39,022 - __main__ - INFO - it: 27, loss: -0.853812, render time: 0.072054, loss time: 0.010544, backward time: 0.004035
+2026-10-16 10:41:41,677 - __main__ - INFO - it: 28, loss: -0.854386, render time: 0.076488, loss time: 0.010926, backward time: 0.005047
+2026-10-16 10:41:44,396 - __main__ - INFO - it: 29, loss: -0.855157, render time: 0.075722, loss time: 0.010514, backward time: 0.004240
+2026-10-16 10:41:47,434 - __main__ - INFO - it: 30, loss: -0.856264, render time: 0.076230, loss time: 0.010727, backward time: 0.004207
+2026-10-16 10:41:50,521 - __main__ - INFO - it: 31, loss: -0.857620, render time: 0.073333, loss time: 0.010914, backward time: 0.007358
+2026-10-16 10:41:53,647 - __main__ - INFO - it: 32, loss: -0.859004, render time: 0.077657, loss time: 0.011475, backward time: 0.010008
+2026-10-16 10:41:56,371 - __main__ - INFO - it: 33, loss: -0.860052, render time: 0.082303, loss time: 0.010829, backward time: 0.009139
+2026-10-16 10:41:58,971 - __main__ - INFO - it: 34, loss: -0.860859, render time: 0.072697, loss time: 0.010099, backward time: 0.005798
+2026-10-16 10:42:01,420 - __main__ - INFO - it: 35, loss: -0.861614, render time: 0.075882, loss time: 0.010170, backward time: 0.006093
+2026-10-16 10:42:03,857 - __main__ - INFO - it: 36, loss: -0.862628, render time: 0.076029, loss time: 0.010597, backward time: 0.004416
+2026-10-16 10:42:06,331 - __main__ - INFO - it: 37, loss: -0.863731, render time: 0.076004, loss time: 0.010902, backward time: 0.003886
+2026-10-16 10:42:08,961 - __main__ - INFO - it: 38, loss: -0.864741, render time: 0.076668, loss time: 0.010592, backward time: 0.004192
+2026-10-16 10:42:11,416 - __main__ - INFO - it: 39, loss: -0.865354, render time: 0.076725, loss time: 0.010405, backward time: 0.004193
+2026-10-16 10:42:13,775 - __main__ - INFO - it: 40, loss: -0.865765, render time: 0.076579, loss time: 0.010423, backward time: 0.004381
+2026-10-16 10:42:16,123 - __main__ - INFO - it: 41, loss: -0.866219, render time: 0.075833, loss time: 0.010274, backward time: 0.004225
+2026-10-16 10:42:18,771 - __main__ - INFO - it: 42, loss: -0.866675, render time: 0.076451, loss time: 0.010205, backward time: 0.004746
+2026-10-16 10:42:21,323 - __main__ - INFO - it: 43, loss: -0.866948, render time: 0.076402, loss time: 0.076435, backward time: 0.004971
+2026-10-16 10:42:23,747 - __main__ - INFO - it: 44, loss: -0.866924, render time: 0.078155, loss time: 0.010293, backward time: 0.002814
+2026-10-16 10:42:26,110 - __main__ - INFO - it: 45, loss: -0.866791, render time: 0.076293, loss time: 0.010203, backward time: 0.002761
+2026-10-16 10:42:28,683 - __main__ - INFO - it: 46, loss: -0.866775, render time: 0.076231, loss time: 0.010196, backward time: 0.002740
+2026-10-16 10:42:31,294 - __main__ - INFO - it: 47, loss: -0.866858, render time: 0.078831, loss time: 0.010201, backward time: 0.002971
+2026-10-16 10:42:33,729 - __main__ - INFO - it: 48, loss: -0.866879, render time: 0.076045, loss time: 0.010219, backward time: 0.002378
+2026-10-16 10:42:36,095 - __main__ - INFO - it: 49, loss: -0.866809, render time: 0.076019, loss time: 0.010157, backward time: 0.004380
+2026-10-16 10:42:38,516 - __main__ - INFO - it: 50, loss: -0.866755, render time: 0.076097, loss time: 0.010741, backward time: 0.004188
+2026-10-16 10:42:41,129 - __main__ - INFO - it: 51, loss: -0.866827, render time: 0.079657, loss time: 0.011112, backward time: 0.002783
+2026-10-16 10:42:43,529 - __main__ - INFO - it: 52, loss: -0.866961, render time: 0.076166, loss time: 0.010464, backward time: 0.004109
+2026-10-16 10:42:45,985 - __main__ - INFO - it: 53, loss: -0.867044, render time: 0.076498, loss time: 0.010463, backward time: 0.004082
+2026-10-16 10:42:48,442 - __main__ - INFO - it: 54, loss: -0.867070, render time: 0.076203, loss time: 0.011611, backward time: 0.006798
+2026-10-16 10:42:51,237 - __main__ - INFO - it: 55, loss: -0.867118, render time: 0.076315, loss time: 0.010590, backward time: 0.004107
+2026-10-16 10:42:53,657 - __main__ - INFO - it: 56, loss: -0.867260, render time: 0.072681, loss time: 0.010123, backward time: 0.004183
+2026-10-16 10:42:56,119 - __main__ - INFO - it: 57, loss: -0.867434, render time: 0.090551, loss time: 0.009864, backward time: 0.004001
+2026-10-16 10:42:58,486 - __main__ - INFO - it: 58, loss: -0.867540, render time: 0.076060, loss time: 0.010477, backward time: 0.004080
+2026-10-16 10:43:01,007 - __main__ - INFO - it: 59, loss: -0.867618, render time: 0.076380, loss time: 0.010651, backward time: 0.004193
+2026-10-16 10:43:03,515 - __main__ - INFO - it: 60, loss: -0.867688, render time: 0.076561, loss time: 0.010293, backward time: 0.004806
+2026-10-16 10:43:06,075 - __main__ - INFO - it: 61, loss: -0.867822, render time: 0.076605, loss time: 0.010388, backward time: 0.004200
+2026-10-16 10:43:08,481 - __main__ - INFO - it: 62, loss: -0.867899, render time: 0.075641, loss time: 0.011116, backward time: 0.005370
+2026-10-16 10:43:10,974 - __main__ - INFO - it: 63, loss: -0.867911, render time: 0.075728, loss time: 0.011135, backward time: 0.003880
+2026-10-16 10:43:13,602 - __main__ - INFO - it: 64, loss: -0.867898, render time: 0.076473, loss time: 0.010628, backward time: 0.002849
+2026-10-16 10:43:16,020 - __main__ - INFO - it: 65, loss: -0.867909, render time: 0.077588, loss time: 0.010852, backward time: 0.004267
+2026-10-16 10:43:18,427 - __main__ - INFO - it: 66, loss: -0.867918, render time: 0.072318, loss time: 0.010884, backward time: 0.005993
+2026-10-16 10:43:20,852 - __main__ - INFO - it: 67, loss: -0.867876, render time: 0.075696, loss time: 0.010329, backward time: 0.003502
+2026-10-16 10:43:23,589 - __main__ - INFO - it: 68, loss: -0.867842, render time: 0.076158, loss time: 0.010171, backward time: 0.002583
+2026-10-16 10:43:26,113 - __main__ - INFO - it: 69, loss: -0.867839, render time: 0.065507, loss time: 0.009687, backward time: 0.002824
+2026-10-16 10:43:28,591 - __main__ - INFO - it: 70, loss: -0.867842, render time: 0.076518, loss time: 0.010911, backward time: 0.002813
+2026-10-16 10:43:31,399 - __main__ - INFO - it: 71, loss: -0.867839, render time: 0.076001, loss time: 0.010962, backward time: 0.002421
+2026-10-16 10:43:34,566 - __main__ - INFO - it: 72, loss: -0.867840, render time: 0.115290, loss time: 0.010351, backward time: 0.002940
+2026-10-16 10:43:36,963 - __main__ - INFO - it: 73, loss: -0.867853, render time: 0.059659, loss time: 0.009821, backward time: 0.002514
+2026-10-16 10:43:39,534 - __main__ - INFO - it: 74, loss: -0.867882, render time: 0.076289, loss time: 0.011064, backward time: 0.004376
+2026-10-16 10:43:41,970 - __main__ - INFO - it: 75, loss: -0.867887, render time: 0.060147, loss time: 0.009767, backward time: 0.004129
+2026-10-16 10:43:44,583 - __main__ - INFO - it: 76, loss: -0.867900, render time: 0.075688, loss time: 0.010787, backward time: 0.004162
+2026-10-16 10:43:47,135 - __main__ - INFO - it: 77, loss: -0.867917, render time: 0.076822, loss time: 0.038286, backward time: 0.008269
+2026-10-16 10:43:49,574 - __main__ - INFO - it: 78, loss: -0.867930, render time: 0.076100, loss time: 0.010886, backward time: 0.004476
+2026-10-16 10:43:52,000 - __main__ - INFO - it: 79, loss: -0.867923, render time: 0.076058, loss time: 0.012240, backward time: 0.003935
+2026-10-16 10:43:54,722 - __main__ - INFO - it: 80, loss: -0.867919, render time: 0.076454, loss time: 0.010736, backward time: 0.004620
+2026-10-16 10:43:57,981 - __main__ - INFO - it: 81, loss: -0.867922, render time: 0.146276, loss time: 0.029564, backward time: 0.003322
+2026-10-16 10:44:01,094 - __main__ - INFO - it: 82, loss: -0.867920, render time: 0.132473, loss time: 0.009717, backward time: 0.002438
+2026-10-16 10:44:04,582 - __main__ - INFO - it: 83, loss: -0.867916, render time: 0.130304, loss time: 0.028577, backward time: 0.003436
+2026-10-16 10:44:08,408 - __main__ - INFO - it: 84, loss: -0.867911, render time: 0.153918, loss time: 0.026351, backward time: 0.003123
+2026-10-16 10:44:11,553 - __main__ - INFO - it: 85, loss: -0.867916, render time: 0.061687, loss time: 0.009654, backward time: 0.002704
+2026-10-16 10:44:14,223 - __main__ - INFO - it: 86, loss: -0.867919, render time: 0.152423, loss time: 0.031437, backward time: 0.003154
+2026-10-16 10:44:16,733 - __main__ - INFO - it: 87, loss: -0.867924, render time: 0.076060, loss time: 0.011434, backward time: 0.002880
+2026-10-16 10:44:19,634 - __main__ - INFO - it: 88, loss: -0.867928, render time: 0.077194, loss time: 0.010510, backward time: 0.002998
+2026-10-16 10:44:22,188 - __main__ - INFO - it: 89, loss: -0.867943, render time: 0.076306, loss time: 0.010223, backward time: 0.004311
+2026-10-16 10:44:24,725 - __main__ - INFO - it: 90, loss: -0.867941, render time: 0.076044, loss time: 0.010500, backward time: 0.003043
+2026-10-16 10:44:27,168 - __main__ - INFO - it: 91, loss: -0.867942, render time: 0.076269, loss time: 0.010520, backward time: 0.002781
+2026-10-16 10:44:30,111 - __main__ - INFO - it: 92, loss: -0.867945, render time: 0.075641, loss time: 0.010224, backward time: 0.004072
+2026-10-16 10:44:32,572 - __main__ - INFO - it: 93, loss: -0.867940, render time: 0.072474, loss time: 0.010328, backward time: 0.002922
+2026-10-16 10:44:35,005 - __main__ - INFO - it: 94, loss: -0.867946, render time: 0.076167, loss time: 0.010505, backward time: 0.004125
+2026-10-16 10:44:37,453 - __main__ - INFO - it: 95, loss: -0.867945, render time: 0.075657, loss time: 0.010226, backward time: 0.002818
+2026-10-16 10:44:40,380 - __main__ - INFO - it: 96, loss: -0.867941, render time: 0.076509, loss time: 0.010380, backward time: 0.003189
+2026-10-16 10:44:43,229 - __main__ - INFO - it: 97, loss: -0.867942, render time: 0.075108, loss time: 0.010657, backward time: 0.003141
+2026-10-16 10:44:45,799 - __main__ - INFO - it: 98, loss: -0.867947, render time: 0.072833, loss time: 0.010543, backward time: 0.004085
+2026-10-16 10:44:48,344 - __main__ - INFO - it: 99, loss: -0.867952, render time: 0.076008, loss time: 0.010469, backward time: 0.004268
+2026-10-16 10:44:51,144 - __main__ - INFO - it: 100, loss: -0.867958, render time: 0.076856, loss time: 0.010111, backward time: 0.004393
+2026-10-16 10:44:53,809 - __main__ - INFO - it: 101, loss: -0.867965, render time: 0.072616, loss time: 0.010427, backward time: 0.007287
+2026-10-16 10:44:56,238 - __main__ - INFO - it: 102, loss: -0.867967, render time: 0.076331, loss time: 0.010171, backward time: 0.004402
+2026-10-16 10:44:58,749 - __main__ - INFO - it: 103, loss: -0.867971, render time: 0.076189, loss time: 0.010308, backward time: 0.004084
+2026-10-16 10:45:01,261 - __main__ - INFO - it: 104, loss: -0.867970, render time: 0.076663, loss time: 0.010314, backward time: 0.002644
+2026-10-16 10:45:03,977 - __main__ - INFO - it: 105, loss: -0.867968, render time: 0.075707, loss time: 0.009729, backward time: 0.003009
+2026-10-16 10:45:06,438 - __main__ - INFO - it: 106, loss: -0.867966, render time: 0.076104, loss time: 0.010431, backward time: 0.002266
+2026-10-16 10:45:08,871 - __main__ - INFO - it: 107, loss: -0.867966, render time: 0.075913, loss time: 0.010269, backward time: 0.002785
+2026-10-16 10:45:11,892 - __main__ - INFO - it: 108, loss: -0.867967, render time: 0.067510, loss time: 0.010159, backward time: 0.002573
+2026-10-16 10:45:14,770 - __main__ - INFO - it: 109, loss: -0.867970, render time: 0.073305, loss time: 0.010499, backward time: 0.003173
+2026-10-16 10:45:17,240 - __main__ - INFO - it: 110, loss: -0.867971, render time: 0.076662, loss time: 0.010107, backward time: 0.006230
+2026-10-16 10:45:19,774 - __main__ - INFO - it: 111, loss: -0.867974, render time: 0.077421, loss time: 0.010422, backward time: 0.006078
+2026-10-16 10:45:22,209 - __main__ - INFO - it: 112, loss: -0.867973, render time: 0.076480, loss time: 0.010578, backward time: 0.002769
+2026-10-16 10:45:24,974 - __main__ - INFO - it: 113, loss: -0.867972, render time: 0.076543, loss time: 0.010408, backward time: 0.002818
+2026-10-16 10:45:27,429 - __main__ - INFO - it: 114, loss: -0.867972, render time: 0.077092, loss time: 0.010442, backward time: 0.002970
+2026-10-16 10:45:29,864 - __main__ - INFO - it: 115, loss: -0.867972, render time: 0.076363, loss time: 0.010597, backward time: 0.002812
+2026-10-16 10:45:32,250 - __main__ - INFO - it: 116, loss: -0.867968, render time: 0.076192, loss time: 0.010174, backward time: 0.002647
+2026-10-16 10:45:32,263 - __main__ - INFO - Final errors: pix: 1.43px, rot: 0.00deg / 0.00000rad, transl: 1.19cm, transl_rescaled: 0.00062
+2026-10-16 10:45:32,263 - __main__ - INFO - Computation Time: 308.24922585487366s
